@@ -13,6 +13,12 @@
 		8F0D39251804AAE9007F8701 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0D39241804AAE9007F8701 /* MobileCoreServices.framework */; };
 		8F0D39271804AAF3007F8701 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0D39261804AAF3007F8701 /* SystemConfiguration.framework */; };
 		8F0D39291804AAFD007F8701 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0D39281804AAFD007F8701 /* CoreLocation.framework */; };
+		8F39043A180858F50091B7EE /*  background_iphone4snon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F390438180858F50091B7EE /*  background_iphone4snon-retina.png */; };
+		8F39043B180858F50091B7EE /*  background_trasp_iphone4snon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F390439180858F50091B7EE /*  background_trasp_iphone4snon-retina.png */; };
+		8F39044018085A170091B7EE /* background_iphone4sretina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F39043C18085A170091B7EE /* background_iphone4sretina.png */; };
+		8F39044118085A170091B7EE /* background_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F39043D18085A170091B7EE /* background_iphone5.png */; };
+		8F39044218085A170091B7EE /* background_trasp_iphone4sretina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */; };
+		8F39044318085A170091B7EE /* background_trasp_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F39043F18085A170091B7EE /* background_trasp_iphone5.png */; };
 		8F482E501804581B00D4DE34 /* ConexionWebservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F482E4F1804581B00D4DE34 /* ConexionWebservice.m */; };
 		8F6E10471806A1E300AEDA1A /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E10461806A1E300AEDA1A /* calendar.png */; };
 		8F6E10491806A1FE00AEDA1A /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E10481806A1FE00AEDA1A /* info.png */; };
@@ -68,6 +74,12 @@
 		8F0D39241804AAE9007F8701 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8F0D39261804AAF3007F8701 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8F0D39281804AAFD007F8701 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8F390438180858F50091B7EE /*  background_iphone4snon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = " background_iphone4snon-retina.png"; sourceTree = "<group>"; };
+		8F390439180858F50091B7EE /*  background_trasp_iphone4snon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = " background_trasp_iphone4snon-retina.png"; sourceTree = "<group>"; };
+		8F39043C18085A170091B7EE /* background_iphone4sretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_iphone4sretina.png; sourceTree = "<group>"; };
+		8F39043D18085A170091B7EE /* background_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_iphone5.png; sourceTree = "<group>"; };
+		8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_trasp_iphone4sretina.png; sourceTree = "<group>"; };
+		8F39043F18085A170091B7EE /* background_trasp_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_trasp_iphone5.png; sourceTree = "<group>"; };
 		8F482E4E1804581B00D4DE34 /* ConexionWebservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConexionWebservice.h; sourceTree = "<group>"; };
 		8F482E4F1804581B00D4DE34 /* ConexionWebservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConexionWebservice.m; sourceTree = "<group>"; };
 		8F6E10461806A1E300AEDA1A /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -183,6 +195,12 @@
 		8FDFA44617ED10E6002585D2 = {
 			isa = PBXGroup;
 			children = (
+				8F39043C18085A170091B7EE /* background_iphone4sretina.png */,
+				8F39043D18085A170091B7EE /* background_iphone5.png */,
+				8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */,
+				8F39043F18085A170091B7EE /* background_trasp_iphone5.png */,
+				8F390438180858F50091B7EE /*  background_iphone4snon-retina.png */,
+				8F390439180858F50091B7EE /*  background_trasp_iphone4snon-retina.png */,
 				8F6E104C1806B0AF00AEDA1A /* FreeHours.h */,
 				8F6E104D1806B0AF00AEDA1A /* FreeHours.m */,
 				8F87CB6C1805C0BC00731574 /* Default-568h@2x.png */,
@@ -354,16 +372,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F39044018085A170091B7EE /* background_iphone4sretina.png in Resources */,
 				8FDFA46B17ED10E6002585D2 /* Images.xcassets in Resources */,
 				8F6E10471806A1E300AEDA1A /* calendar.png in Resources */,
 				8F6E10491806A1FE00AEDA1A /* info.png in Resources */,
 				8FDFA45D17ED10E6002585D2 /* InfoPlist.strings in Resources */,
+				8F39043B180858F50091B7EE /*  background_trasp_iphone4snon-retina.png in Resources */,
 				8F87CB691805BF9400731574 /* iphone5.png in Resources */,
+				8F39044218085A170091B7EE /* background_trasp_iphone4sretina.png in Resources */,
 				8F87CB6B1805BF9400731574 /*  iphone4snon-retina.png in Resources */,
+				8F39044118085A170091B7EE /* background_iphone5.png in Resources */,
 				8F6E104B1806A20D00AEDA1A /* man.png in Resources */,
 				8F87CB6A1805BF9400731574 /* iphone4sretina.png in Resources */,
 				8F87CB6D1805C0BC00731574 /* Default-568h@2x.png in Resources */,
+				8F39044318085A170091B7EE /* background_trasp_iphone5.png in Resources */,
 				8FDFA46617ED10E6002585D2 /* Main.storyboard in Resources */,
+				8F39043A180858F50091B7EE /*  background_iphone4snon-retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

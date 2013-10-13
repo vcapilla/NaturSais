@@ -1,0 +1,20 @@
+//
+//  ContactView.h
+//  NaturSais
+//
+//  Created by Victor Capilla on 09/10/13.
+//  Copyright (c) 2013 ParcApp. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ContactView : UIViewController
+
+@property (nonatomic, strong)IBOutlet UIButton *webButon;
+@property (nonatomic, strong)IBOutlet UIButton *mailButton;
+@property (nonatomic, strong)IBOutlet UIButton *phoneButton;
+
+-(IBAction)linkButtonClick:(id)sender;
+-(IBAction)phoneNumberClick:(id)sender;
+-(IBAction)mailClick:(id)sender;
+@end

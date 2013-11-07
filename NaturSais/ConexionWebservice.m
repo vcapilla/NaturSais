@@ -1,4 +1,4 @@
-//
+ //
 //  ConexionWebservice.m
 //  NaturSais
 //
@@ -14,23 +14,38 @@ static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
 
 @implementation ConexionWebservice{
     NSMutableArray *codeArray;
+   
+    //NSMutableArray *freeHours;
     
     }
 
--(id)webserviceAccess:(NSString *)method code:(NSString *)code{
+-(id)returnWebService:(NSString *)method code:(NSString *)code{
+    
+        [self webserviceAccess:method code:code];
+   
+    
+    return codeArray;
+    
+}
+
+-(void)webserviceAccess:(NSString *)method code:(NSString *)code{
     
     
     NSString *webserviceUrl = [NSString stringWithFormat:@"%@?method=%@&code=%@", BaseURLString, method, code];
     NSURL *url = [NSURL URLWithString:webserviceUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFJSONRequestOperation *op = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+   
+    AFJSONRequestOperation *operation =
+    [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         if ([JSON isEqual:[NSNull null]]) {
             NSLog(@"The JSON is empty");
         }else{
            
             NSArray *savedJSON = [self arrayFromJson:JSON];
             codeArray = [NSMutableArray arrayWithArray:[savedJSON valueForKey:@"code"]];
+            NSLog(@"%@", codeArray);
+            
         }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
@@ -39,13 +54,13 @@ static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
                                            cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
         [av show];
-    }];
+      
+    }  ];
+    operation.JSONReadingOptions = NSJSONReadingAllowFragments;
+        [operation start];
     
-    [op start];
-    
-return codeArray;
-
 }
+
 -(void)webserviceAccess:(NSString *)method code:(NSString *)code hora:(NSString *)hora{
     
     NSString *webserviceUrl = [[NSString stringWithFormat:@"%@?method=%@&code=%@&hora=%@", BaseURLString, method, code, hora] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -78,6 +93,7 @@ return codeArray;
 -(void)webserviceAccess:(NSString *)method code:(NSString *)code name:(NSString *)name phone:(NSString *)phone comments:(NSString *)comments{
   
     NSString *webserviceURL = [[NSString stringWithFormat:@"%@?method=%@&code=%@&nombre=%@&telefono=%@&comentarios=%@", BaseURLString, method, code, name, phone, comments]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
    
     NSURL *url = [NSURL URLWithString:webserviceURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -103,5 +119,8 @@ return codeArray;
     JSONDecoder * decoder = [[JSONDecoder alloc] initWithParseOptions:JKParseOptionNone];
     return [decoder mutableObjectWithData:[JSONString JSONData]];
 }
+
+
+
 @end
 

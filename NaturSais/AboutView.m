@@ -12,6 +12,8 @@
 
 @end
 
+//Pantalla donde aparece una pequeña explicacion de la empresa.
+
 @implementation AboutView
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

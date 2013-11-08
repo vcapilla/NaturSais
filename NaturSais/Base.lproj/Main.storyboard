@@ -233,9 +233,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <state key="normal" title="Confirmar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="4ec-je-lD0" kind="push" identifier="showBookingInfo" id="grN-uG-zk7"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comentarios" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRO-QY-KWf">
                                 <rect key="frame" x="20" y="193" width="280" height="30"/>
@@ -257,6 +254,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="name" destination="G8e-wN-xnQ" id="ihb-0l-Kyi"/>
                         <outlet property="phone" destination="VOW-X6-FcY" id="uT9-qB-Xiy"/>
                         <outlet property="titleLabel" destination="y25-c8-JOb" id="cug-76-EAC"/>
+                        <segue destination="4ec-je-lD0" kind="push" identifier="showBookingInfo" id="0An-q5-iIp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2a-sR-3fG" userLabel="First Responder" sceneMemberID="firstResponder"/>

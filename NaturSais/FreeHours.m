@@ -43,8 +43,8 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
                      [NSString stringWithFormat:@"%@17",_code],
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
-    
-    [super viewDidLoad];    
+    self.navigationItem.title = @"Escoge una hora";
+    [super viewDidLoad];
     
   
 }

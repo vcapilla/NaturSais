@@ -111,7 +111,6 @@
 		8F98D1F718111BC70008CD89 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8F98D1F918111C210008CD89 /* BookingFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingFormViewController.h; sourceTree = "<group>"; };
 		8F98D1FA18111C210008CD89 /* BookingFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingFormViewController.m; sourceTree = "<group>"; };
-		8F98D1FD18111C210008CD89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		8F98D1FE18111C210008CD89 /* FreeHours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeHours.h; sourceTree = "<group>"; };
 		8F98D1FF18111C210008CD89 /* FreeHours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeHours.m; sourceTree = "<group>"; };
 		8FDFA44F17ED10E6002585D2 /* NaturSais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaturSais.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +118,6 @@
 		8FDFA45417ED10E6002585D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8FDFA45617ED10E6002585D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8FDFA45A17ED10E6002585D2 /* NaturSais-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NaturSais-Info.plist"; sourceTree = "<group>"; };
-		8FDFA45C17ED10E6002585D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8FDFA45E17ED10E6002585D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8FDFA46017ED10E6002585D2 /* NaturSais-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NaturSais-Prefix.pch"; sourceTree = "<group>"; };
 		8FDFA46117ED10E6002585D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,8 +127,11 @@
 		8FDFA47017ED10E6002585D2 /* NaturSaisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaturSaisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDFA47117ED10E6002585D2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8FDFA47917ED10E7002585D2 /* NaturSaisTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NaturSaisTests-Info.plist"; sourceTree = "<group>"; };
-		8FDFA47B17ED10E7002585D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8FDFA47D17ED10E7002585D2 /* NaturSaisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NaturSaisTests.m; sourceTree = "<group>"; };
+		8FF4C669182D04E10070C0F3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8FF4C66A182D04E20070C0F3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		8FF4C66B182D04E20070C0F3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8FF4C66C182D04E20070C0F3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +361,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 8FDFA44617ED10E6002585D2;
 			productRefGroup = 8FDFA45017ED10E6002585D2 /* Products */;
@@ -452,7 +454,7 @@
 		8F98D1FC18111C210008CD89 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8F98D1FD18111C210008CD89 /* en */,
+				8FF4C66B182D04E20070C0F3 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -460,7 +462,7 @@
 		8FDFA45B17ED10E6002585D2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8FDFA45C17ED10E6002585D2 /* en */,
+				8FF4C669182D04E10070C0F3 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -469,6 +471,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8FDFA46517ED10E6002585D2 /* Base */,
+				8FF4C66A182D04E20070C0F3 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -476,7 +479,7 @@
 		8FDFA47A17ED10E7002585D2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8FDFA47B17ED10E7002585D2 /* en */,
+				8FF4C66C182D04E20070C0F3 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

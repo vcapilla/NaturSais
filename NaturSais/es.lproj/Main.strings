@@ -1,0 +1,69 @@
+
+/* Class = "IBUIButton"; normalTitle = "OK"; ObjectID = "3jZ-ju-cAt"; */
+"3jZ-ju-cAt.normalTitle" = "OK";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "9vt-vk-hy4"; */
+"9vt-vk-hy4.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "BfC-FG-eH4"; */
+"BfC-FG-eH4.text" = "Label";
+
+/* Class = "IBUIButton"; normalTitle = "Reservar"; ObjectID = "Cg6-9f-24Q"; */
+"Cg6-9f-24Q.normalTitle" = "Reservar";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "E8W-xh-k3v"; */
+"E8W-xh-k3v.text" = "Label";
+
+/* Class = "IBUITextField"; placeholder = "Nombre"; ObjectID = "G8e-wN-xnQ"; */
+"G8e-wN-xnQ.placeholder" = "Nombre";
+
+/* Class = "IBUIBarButtonItem"; title = "Atrás"; ObjectID = "Nfp-aS-m8A"; */
+"Nfp-aS-m8A.title" = "Atrás";
+
+/* Class = "IBUITabBarItem"; title = "Reservar"; ObjectID = "QcY-H4-9aZ"; */
+"QcY-H4-9aZ.title" = "Reservar";
+
+/* Class = "IBUIButton"; normalTitle = "Confirmar"; ObjectID = "RrF-mZ-Bgt"; */
+"RrF-mZ-Bgt.normalTitle" = "Confirmar";
+
+/* Class = "IBUITextField"; placeholder = "Telefono"; ObjectID = "VOW-X6-FcY"; */
+"VOW-X6-FcY.placeholder" = "Telefono";
+
+/* Class = "IBUILabel"; text = "Contactar"; ObjectID = "dQC-p5-jBM"; */
+"dQC-p5-jBM.text" = "Contactar";
+
+/* Class = "IBUITextView"; text = "En sus compras on-line recibira su pedido en 48h gracias a nuestros envios urgentes."; ObjectID = "doN-G1-YPC"; */
+"doN-G1-YPC.text" = "En sus compras on-line recibira su pedido en 48h gracias a nuestros envios urgentes.";
+
+/* Class = "IBUITextView"; text = "Natursais somo un establecimiento con tienda on-line donde a parte de servicios de quiromasaje tenemos a su disposicion un catalogo extenso de productos de hervolario y dietetica.                                            "; ObjectID = "fVg-Yo-igV"; */
+"fVg-Yo-igV.text" = "Natursais somo un establecimiento con tienda on-line donde a parte de servicios de quiromasaje tenemos a su disposicion un catalogo extenso de productos de hervolario y dietetica.                                            ";
+
+/* Class = "IBUITabBarItem"; title = "Información"; ObjectID = "fWM-KF-kqB"; */
+"fWM-KF-kqB.title" = "Información";
+
+/* Class = "IBUITextField"; placeholder = "Comentarios"; ObjectID = "gRO-QY-KWf"; */
+"gRO-QY-KWf.placeholder" = "Comentarios";
+
+/* Class = "IBUIButton"; normalTitle = "contacto@natursais.com"; ObjectID = "kSW-bW-ATq"; */
+"kSW-bW-ATq.normalTitle" = "contacto@natursais.com";
+
+/* Class = "IBUIButton"; normalTitle = "www.natursais.com"; ObjectID = "kXC-m0-fau"; */
+"kXC-m0-fau.normalTitle" = "www.natursais.com";
+
+/* Class = "IBUINavigationItem"; title = "Title"; ObjectID = "o7a-B4-eZF"; */
+"o7a-B4-eZF.title" = "Title";
+
+/* Class = "IBUITabBarItem"; title = "Contactar"; ObjectID = "sAG-9d-hBD"; */
+"sAG-9d-hBD.title" = "Contactar";
+
+/* Class = "IBUIButton"; normalTitle = "608 140 283"; ObjectID = "sYz-tg-0cW"; */
+"sYz-tg-0cW.normalTitle" = "608 140 283";
+
+/* Class = "IBUITextView"; text = "Dicho catalogo esta compuesto por complementos naturales para mejorar su salud y bienestar, suplementos deportivos, productos del control de peso, vitaminas, antioxidantes y cosmetica natural."; ObjectID = "wXg-JK-8Oq"; */
+"wXg-JK-8Oq.text" = "Dicho catalogo esta compuesto por complementos naturales para mejorar su salud y bienestar, suplementos deportivos, productos del control de peso, vitaminas, antioxidantes y cosmetica natural.";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "xqJ-qU-dKv"; */
+"xqJ-qU-dKv.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "y25-c8-JOb"; */
+"y25-c8-JOb.text" = "Label";

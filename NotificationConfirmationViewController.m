@@ -33,7 +33,7 @@
     _lblPhone.text = [NSString stringWithString:_strPhone];
     _lblComents.text = [NSString stringWithString:_strComents];
     _lblTitle.text = [NSString stringWithString:_strTitle];
-    
+    self.navigationItem.title = @"Confirmacion de su reserva";
     //No queremos que puedan volver hacia atras porque ya se ha confirmado
     self.navigationItem.hidesBackButton = YES;
 	

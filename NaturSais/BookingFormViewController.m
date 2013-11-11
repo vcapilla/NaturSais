@@ -162,20 +162,21 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
     if (_name.text.length == 0) {
         
         //Si no se ha introducido nada, mostramos un error por pantalla
-        NSLog(@"Error");
+        [self error:@"Informacion incompleta" message:@"Introduzca un Nombre"];
+        
         
     //Si se ha escrito algo en el campo Nombre, comprobamos que se haya escrito algo en el campo Telefono
     }else if(_phone.text.length == 0){
         
         //Si no se ha introducido nada, mostramos un error por pantalla
-        NSLog(@"Error");
+        [self error:@"Informacion incompleta" message:@"Introduzca un Numero de Telefono"];
         
     //Si se ha escrito algo en el campo Telefono, comprobamos que se haya escrito algo en el campo Comentarios
-    }else if (_comments.text.length == 0){
-        
-        //Si no se ha introducido nada, mostramos un error por pantalla
-        NSLog(@"Error");
-        
+//    }else if (_comments.text.length == 0){
+//        
+       //Si no se ha introducido nada, mostramos un error por pantalla
+//        [self error:@"Informacion incompleta" message:@"Introduzca un Nombre"];
+//        
     //Si se ha comrpobado todo y todo esta OK, lanzamos la transicion entre las 2 vistas.
     }else{
         
@@ -288,5 +289,19 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
     operation.JSONReadingOptions = NSJSONReadingAllowFragments;
     [operation start];
     
+}
+
+//Metodo en el que configuramos un AlertView para las alertas de esta clase
+-(void)error:(NSString *)title message:(NSString* )message{
+    
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@",title]
+                       
+                                                 message:[NSString stringWithFormat:@"%@",message]
+                       
+                                                delegate:nil
+                       
+                                       cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [av show];
 }
 @end

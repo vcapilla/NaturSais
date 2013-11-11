@@ -155,6 +155,36 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
     [super viewWillDisappear:animated];
 }
 
+//Metodo que se ejecutara al pulsar al boton de confirmacion
+-(IBAction)checkTextFields{
+    
+    //Comprobamos que se ha introducido algo en el campo Nombre
+    if (_name.text.length == 0) {
+        
+        //Si no se ha introducido nada, mostramos un error por pantalla
+        NSLog(@"Error");
+        
+    //Si se ha escrito algo en el campo Nombre, comprobamos que se haya escrito algo en el campo Telefono
+    }else if(_phone.text.length == 0){
+        
+        //Si no se ha introducido nada, mostramos un error por pantalla
+        NSLog(@"Error");
+        
+    //Si se ha escrito algo en el campo Telefono, comprobamos que se haya escrito algo en el campo Comentarios
+    }else if (_comments.text.length == 0){
+        
+        //Si no se ha introducido nada, mostramos un error por pantalla
+        NSLog(@"Error");
+        
+    //Si se ha comrpobado todo y todo esta OK, lanzamos la transicion entre las 2 vistas.
+    }else{
+        
+        //Indicamos el identificador de segue que queremos lanzar y desde donde lo lanzamos
+        [self performSegueWithIdentifier:@"showBookingInfo" sender:self];
+    }
+
+}
+
 //Metodo encargado de, una vez dentro de esta pantalla, enviar al webservice la informacion necesaria para "reservar" esta cita para que no la pueda seleccionar otro usuario mientras rellenamos el formulario
 -(void)booking{
     

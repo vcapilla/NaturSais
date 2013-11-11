@@ -15,5 +15,6 @@
 @property (nonatomic, strong)IBOutlet UITextField *comments;
 @property (nonatomic, strong)NSString *selectedHour;
 
+-(IBAction)checkTextFields;
 
 @end

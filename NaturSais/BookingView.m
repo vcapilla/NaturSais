@@ -35,6 +35,8 @@
     NSDate *today = [NSDate date];
     _date.minimumDate = today;
     
+    self.navigationItem.title = @"Reservar";    
+    
 	// Do any additional setup after loading the view.
 }
 

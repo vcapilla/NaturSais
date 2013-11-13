@@ -14,6 +14,7 @@
 		8F0D39271804AAF3007F8701 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0D39261804AAF3007F8701 /* SystemConfiguration.framework */; };
 		8F0D39291804AAFD007F8701 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0D39281804AAFD007F8701 /* CoreLocation.framework */; };
 		8F117176181881E6007286D9 /* NotificationConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F117175181881E6007286D9 /* NotificationConfirmationViewController.m */; };
+		8F2D92BC18339CD400B3413A /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F2D92BB18339CD400B3413A /* Images-2.xcassets */; };
 		8F39043B180858F50091B7EE /* background_trasp_iphone4snon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F390439180858F50091B7EE /* background_trasp_iphone4snon-retina.png */; };
 		8F39044218085A170091B7EE /* background_trasp_iphone4sretina.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */; };
 		8F39044318085A170091B7EE /* background_trasp_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F39043F18085A170091B7EE /* background_trasp_iphone5.png */; };
@@ -74,6 +75,7 @@
 		8F0D39281804AAFD007F8701 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8F117174181881E6007286D9 /* NotificationConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationConfirmationViewController.h; sourceTree = "<group>"; };
 		8F117175181881E6007286D9 /* NotificationConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationConfirmationViewController.m; sourceTree = "<group>"; };
+		8F2D92BB18339CD400B3413A /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		8F390439180858F50091B7EE /* background_trasp_iphone4snon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_trasp_iphone4snon-retina.png"; sourceTree = "<group>"; };
 		8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_trasp_iphone4sretina.png; sourceTree = "<group>"; };
 		8F39043F18085A170091B7EE /* background_trasp_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_trasp_iphone5.png; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				8F87CB8D1806033E00731574 /* ContactView.m */,
 				8F87CB8F1806034E00731574 /* BookingView.h */,
 				8F87CB901806034E00731574 /* BookingView.m */,
+				8F2D92BB18339CD400B3413A /* Images-2.xcassets */,
 			);
 			path = NaturSais;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				8FDFA46B17ED10E6002585D2 /* Images.xcassets in Resources */,
 				8F98D20118111C210008CD89 /* InfoPlist.strings in Resources */,
 				8F6E10471806A1E300AEDA1A /* calendar.png in Resources */,
+				8F2D92BC18339CD400B3413A /* Images-2.xcassets in Resources */,
 				8F6E10491806A1FE00AEDA1A /* info.png in Resources */,
 				8FDFA45D17ED10E6002585D2 /* InfoPlist.strings in Resources */,
 				8F39043B180858F50091B7EE /* background_trasp_iphone4snon-retina.png in Resources */,
@@ -568,6 +572,8 @@
 		8FDFA48217ED10E7002585D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -584,6 +590,8 @@
 		8FDFA48317ED10E7002585D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

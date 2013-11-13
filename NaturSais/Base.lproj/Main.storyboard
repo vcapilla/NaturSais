@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RDk-Fx-l8N">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--About View - Información-->
@@ -23,18 +23,18 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVg-Yo-igV">
                                 <rect key="frame" x="20" y="42" width="280" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Natursais somo un establecimiento con tienda on-line donde a parte de servicios de quiromasaje tenemos a su disposicion un catalogo extenso de productos de hervolario y dietetica.                                            </string>
+                                <string key="text">Natursais somos un establecimiento con tienda on-line donde a parte de servicios de quiromasaje tenemos a su disposición un catalogo extenso de productos de herbolario y dietética.      </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXg-JK-8Oq">
                                 <rect key="frame" x="20" y="151" width="280" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Dicho catalogo esta compuesto por complementos naturales para mejorar su salud y bienestar, suplementos deportivos, productos del control de peso, vitaminas, antioxidantes y cosmetica natural.</string>
+                                <string key="text">Dicho catalogo esta compuesto por complementos naturales para mejorar su salud y bienestar, suplementos deportivos, productos del control de peso, vitaminas, antioxidantes y cosmética natural.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="En sus compras on-line recibira su pedido en 48h gracias a nuestros envios urgentes." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doN-G1-YPC">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="En sus compras on-line recibirá su pedido en 48h gracias a nuestros envíos urgentes." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doN-G1-YPC">
                                 <rect key="frame" x="20" y="276" width="280" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

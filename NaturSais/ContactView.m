@@ -29,7 +29,8 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    _versonLabel.text = [NSString stringWithFormat:@"Version: %@",version];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +61,7 @@
 -(IBAction)phoneNumberClick:(id)sender{
     
     //Telefono al que llamara al pulsar encima del link
-    NSString *phoneNumber = @"tel://608140283";
+    NSString *phoneNumber = @"tel://625917441";
     //Condicion para controlar si existe una app para poder realizar llamadas
     if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: phoneNumber]]) {
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Complemento no disponible" message:@"No dispone de ninguna aplicacion para poder realizar una llamada." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

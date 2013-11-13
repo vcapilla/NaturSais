@@ -13,6 +13,7 @@
 @property (nonatomic, strong)IBOutlet UIButton *webButon;
 @property (nonatomic, strong)IBOutlet UIButton *mailButton;
 @property (nonatomic, strong)IBOutlet UIButton *phoneButton;
+@property (nonatomic, strong)IBOutlet UILabel *versonLabel;
 
 -(IBAction)linkButtonClick:(id)sender;
 -(IBAction)phoneNumberClick:(id)sender;

@@ -399,15 +399,22 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="highlightedColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovg-rX-Pa3">
+                                <rect key="frame" x="137" y="283" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mapa">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mapClick:" destination="iye-1x-m3U" eventType="touchUpInside" id="wQb-mZ-Ava"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Contactar" image="info.png" id="sAG-9d-hBD"/>
                     <connections>
-                        <outlet property="mailButton" destination="kSW-bW-ATq" id="OLo-1s-G0f"/>
-                        <outlet property="phoneButton" destination="sYz-tg-0cW" id="0a3-m8-Xhn"/>
                         <outlet property="versonLabel" destination="b3q-gt-kZX" id="F3V-Is-Qbb"/>
-                        <outlet property="webButon" destination="kXC-m0-fau" id="yDv-Oe-3Gb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9X-nP-TFg" userLabel="First Responder" sceneMemberID="firstResponder"/>

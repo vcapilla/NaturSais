@@ -7,6 +7,7 @@
 //
 
 #import "ContactView.h"
+#import <MapKit/MapKit.h>
 
 @interface ContactView ()
 
@@ -92,4 +93,18 @@
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:mail]];
     }
 }
+-(IBAction)mapClick:(id)sender{
+    
+    CLLocationCoordinate2D rdOfficeLocation = CLLocationCoordinate2DMake(41.150101, 1.097914);
+    
+    
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:rdOfficeLocation addressDictionary:nil];
+        MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
+        item.name = @"NaturSais";
+        [item openInMapsWithLaunchOptions:nil];
+     
+
+}
+
+
 @end

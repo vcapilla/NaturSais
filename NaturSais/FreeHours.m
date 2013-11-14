@@ -54,7 +54,7 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//Comentario
 //Metodo que, usando la variable code nos devuelve las horas ocupadas para ese dia obteniendolas de un webservice
 -(void)loadData{
     

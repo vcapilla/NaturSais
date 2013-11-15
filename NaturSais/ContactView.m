@@ -32,6 +32,7 @@
 	// Do any additional setup after loading the view.
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     _versonLabel.text = [NSString stringWithFormat:@"Version: %@",version];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,6 +106,22 @@
      
 
 }
+-(IBAction)parcappClick:(id)sender{
+    
+    
+    //URL de la web a mostrar
+    NSString* launchUrl = @"http://www.parcapp.es";
+    //Condicion para controlar que existe una app instalada para poder ver la web. En el caso de que no se pueda, se mostrar un error flotante.
+    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:[NSString stringWithString:launchUrl]]]) {
+        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Complemento no disponible" message:@"No dispone de ninguna aplicacion para poder abrir esta web." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [av show];
+        
+    }else{
+        //Ejecucion del programa que pueda abrir dicho link en nuestro dispositivo
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithString:launchUrl]]];
+        
+    }
 
 
+}
 @end

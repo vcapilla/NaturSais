@@ -8,9 +8,9 @@
 //Clase encargada de la pantalla que muestra las horas disponibles y en la cual marcaremos la hora que queramos
 
 #import "FreeHours.h"
-//#import "BookingView.h"
 #import "BookingFormViewController.h"
 #import "JSONKit.h"
+#import "MBProgressHUD.h"
 
 //URL sin envio de mail
 //static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
@@ -28,6 +28,7 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
     NSMutableArray *codesToUse;
     NSMutableArray *freeHoursList;
     NSMutableArray *codesObtained;
+    MBProgressHUD *hud ;
     
 }
 
@@ -44,6 +45,10 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
     self.navigationItem.title = @"Escoge una hora";
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeDeterminate;
+    hud.labelText = @"Uploading";
+    [hud show:YES];
     [super viewDidLoad];
     
   
@@ -57,6 +62,8 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
 
 //Metodo que, usando la variable code nos devuelve las horas ocupadas para ese dia obteniendolas de un webservice
 -(void)loadData{
+    
+  
     
     //Guardamos la URL del webservice con los parametros necesarios en un string
     NSString *webserviceUrl = [NSString stringWithFormat:@"%@?method=getBooking&code=%@", BaseURLString, _code];
@@ -108,6 +115,7 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
         
             //Rellenamos la tableView
             [self.tableView reloadData];
+            [hud hide:YES];
             
         }
         //Esto se lanzara si hay algun error
@@ -126,8 +134,10 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
     
     //Lanzamos la operacion
     [operation start];
-
+    
+    
 }
+
 
 //Metodo encargado de indicar cuantas filas debe tener nuestra tabla
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

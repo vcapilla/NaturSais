@@ -114,7 +114,7 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                                         
             //AlertView que muestra el error
-            [self error:@"Error en la conexión" message:[NSString stringWithFormat:@"%@",error]];
+            [self error:@"Error en la conexión" message:[NSString stringWithFormat:@"Problemas en la comunicación"]];
             
             //Log que nos ayuda a saber donde esta el problema
             NSLog(@"Algo esta pasando en el metodo loadData");

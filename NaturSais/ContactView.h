@@ -16,8 +16,10 @@
 //@property (nonatomic, strong)IBOutlet UIButton *mapButton;
 @property (nonatomic, strong)IBOutlet UILabel *versonLabel;
 
+
 -(IBAction)linkButtonClick:(id)sender;
 -(IBAction)phoneNumberClick:(id)sender;
 -(IBAction)mailClick:(id)sender;
--(IBAction)mapClick:(id)sender; 
+-(IBAction)mapClick:(id)sender;
+-(IBAction)parcappClick:(id)sender;
 @end

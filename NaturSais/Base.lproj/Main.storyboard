@@ -47,6 +47,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="El horario de tienda es:                de 10:00 a 13:00 y de 17:00 a 20:00 de lunes a viernes" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9Uf-Dz-JxP">
+                                <rect key="frame" x="40" y="372" width="236" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -130,10 +137,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="YnF-V9-ZpZ" kind="push" identifier="sendDate" id="nTY-mq-PZy"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="El horario de tratamientos es:            de 10:00 a 14:00 y                          de 16:00 a 19:00" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpv-3Y-p29">
-                                <rect key="frame" x="40" y="307" width="240" height="67"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpv-3Y-p29">
+                                <rect key="frame" x="40" y="307" width="240" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">El horario de reservas es:             de 10:00 a 12:00 y                          de 17:00 a 19:00                             de lunes a viernes</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

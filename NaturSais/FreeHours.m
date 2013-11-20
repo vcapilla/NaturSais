@@ -39,16 +39,15 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
                      [NSString stringWithFormat:@"%@10",_code],
                      [NSString stringWithFormat:@"%@11",_code],
                      [NSString stringWithFormat:@"%@12",_code],
-                     [NSString stringWithFormat:@"%@13",_code],
-                     [NSString stringWithFormat:@"%@16",_code],
                      [NSString stringWithFormat:@"%@17",_code],
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
     self.navigationItem.title = @"Escoge una hora";
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeDeterminate;
-    hud.labelText = @"Uploading";
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Cargando";
     [hud show:YES];
+    
     [super viewDidLoad];
     
   
@@ -120,7 +119,9 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
         }
         //Esto se lanzara si hay algun error
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                        
+            
+            [hud hide:YES];
+            
             //AlertView que muestra el error
             [self error:@"Error en la conexión" message:[NSString stringWithFormat:@"Problemas en la comunicación"]];
             

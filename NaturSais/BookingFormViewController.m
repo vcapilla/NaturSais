@@ -199,7 +199,7 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
                                                         NSLog(@"%@ guardada correctamente", _selectedHour);
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                        
+                                                        NSLog(@"%2@", error);
                                                     }];
     
     operation.JSONReadingOptions = NSJSONReadingAllowFragments;

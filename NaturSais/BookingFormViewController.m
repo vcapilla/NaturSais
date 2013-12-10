@@ -15,7 +15,7 @@
 //static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
 
 //URL con envio de mail
-static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_service_con_mail/testservice.php";
+static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_service_natursais.php";
 
 
 @interface BookingFormViewController ()
@@ -261,6 +261,7 @@ static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_serv
         destViewController.strPhone = [NSString stringWithString:insertedPhone];
         destViewController.strComents = [NSString stringWithString:insertedComments];
         destViewController.strTitle = [NSString stringWithString:completeHour];
+        destViewController.strDate = _selectedHour;
         
         //Ejecutamos el metodo que guarda la informacion completa en la base de datos
         [self bookingCompleteInfo];

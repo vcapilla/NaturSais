@@ -32,7 +32,7 @@
 	// Do any additional setup after loading the view.
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     _versonLabel.text = [NSString stringWithFormat:@"Version: %@",version];
-    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(200/255.0)]];    
 }
 
 - (void)didReceiveMemoryWarning

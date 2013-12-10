@@ -41,7 +41,7 @@ NSDate *today;
 {
     
     [super viewDidLoad];
-    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(200/255.0)]];
     CKCalendarView *calendar = [[CKCalendarView alloc]initWithStartDay:startMonday frame:CGRectMake(35, 60, 250, 250)];
     self.calendar = calendar;
     calendar.delegate = self;
@@ -55,11 +55,9 @@ NSDate *today;
     calendar.onlyShowCurrentMonth = NO;
     calendar.adaptHeightToNumberOfWeeksInMonth = YES;
     
-    calendar.backgroundColor = [UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(200/255.0)];
+    calendar.backgroundColor = [UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(150/255.0)];
     [self.view addSubview:calendar];
-    //Le decimos al DatePicker que la fecha minima es hoy.
-    //NSDate *today = [NSDate date];
-    //_date.minimumDate = today;
+    
     
     self.navigationItem.title = @"Reservar";    
     
@@ -86,22 +84,25 @@ NSDate *today;
 }
 
 - (BOOL)dateIsDisabled:(NSDate *)date {
-    NSInteger intervalo = (NSInteger)[date timeIntervalSinceNow];
-    NSInteger fecha = (NSInteger)date;
+
     NSString *hoyString = [self.dateFormatter stringFromDate:today];
     NSDate *hoyDate = [self.dateFormatter dateFromString:hoyString];
-    
-    NSLog(@"%d", intervalo);
+ 
     if ([date compare:hoyDate]==NSOrderedAscending){
         if([date compare:hoyDate]==NSOrderedSame){
-            NSLog(@"%d", fecha);
+            
             return NO;
+            
         }else{
+            
             return YES;
+            
         }
+        
     }
     
     return NO;
+    
 }
 
 #pragma mark -
@@ -125,9 +126,9 @@ NSDate *today;
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
     
     _selectedDate = date;
-    NSString *fechaSeleccionada = [self.dateFormatter stringFromDate:date];
-    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Fecha seleccionada" message:[NSString stringWithFormat:@"La fecha seleccionada es:%@", fechaSeleccionada] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [av show];
+//    NSString *fechaSeleccionada = [self.dateFormatter stringFromDate:date];
+//    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Fecha seleccionada" message:[NSString stringWithFormat:@"La fecha seleccionada es:%@", fechaSeleccionada] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [av show];
     
 }
 

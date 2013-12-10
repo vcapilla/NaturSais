@@ -16,7 +16,7 @@
 //static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
 
 //URL con envia de mail
-static NSString *const BaseURLString = @"http://natursais.tk/natursais_test_service_con_mail/testservice.php";
+static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_service_natursais.php";
 
 @interface FreeHours ()
 

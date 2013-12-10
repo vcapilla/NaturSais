@@ -18,7 +18,9 @@
 @property (nonatomic ,strong)NSString *strName;
 @property (nonatomic ,strong)NSString *strPhone;
 @property (nonatomic ,strong)NSString *strComents;
+@property (nonatomic, strong)NSString *strDate;
 
 -(IBAction)endProcess:(id)sender;
+-(IBAction)saveInCalendar:(id)sender;
 
 @end

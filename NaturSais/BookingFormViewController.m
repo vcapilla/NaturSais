@@ -10,6 +10,7 @@
 #import "BookingFormViewController.h"
 #import "FreeHours.h"
 #import "NotificationConfirmationViewController.h"
+#import "JSONKit.h"
 
 //URL sin envio de mail
 //static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
@@ -29,6 +30,8 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     NSString *insertedName;
     NSString *insertedPhone;
     NSString *insertedComments;
+    NSString *localizador;
+    NSMutableArray *localizadorMA;
 
 }
 
@@ -170,18 +173,25 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
         
         //Si no se ha introducido nada, mostramos un error por pantalla
         [self error:@"Informacion incompleta" message:@"Introduzca un Numero de Telefono"];
-        
-    //Si se ha escrito algo en el campo Telefono, comprobamos que se haya escrito algo en el campo Comentarios
-//    }else if (_comments.text.length == 0){
-//        
-       //Si no se ha introducido nada, mostramos un error por pantalla
-//        [self error:@"Informacion incompleta" message:@"Introduzca un Nombre"];
-//        
+               
     //Si se ha comrpobado todo y todo esta OK, lanzamos la transicion entre las 2 vistas.
     }else{
+    
+        //Guardamos lo introducido en el primer text box dentro de la variable insertedName
+        insertedName = _name.text;
         
-        //Indicamos el identificador de segue que queremos lanzar y desde donde lo lanzamos
-        [self performSegueWithIdentifier:@"showBookingInfo" sender:self];
+        //Guardamos lo introducido en el segundo text box dentro de la variable insertedPhone
+        insertedPhone = _phone.text;
+    if(_comments.text.length == 0){
+        
+        
+        insertedComments = @"NO COMMENTS";
+    }else{        //Guardamos lo introducido en el tercer text box dentro de la variable insertedcomments
+    insertedComments = _comments.text;
+    }
+        //Ejecutamos el metodo que guarda la informacion completa en la base de datos
+        [self bookingCompleteInfo];        
+        
     }
 
 }
@@ -197,9 +207,10 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                                                         NSLog(@"%@ guardada correctamente", _selectedHour);
+                                                        
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                        NSLog(@"%2@", error);
+                                                        NSLog(@"%@", error);
                                                     }];
     
     operation.JSONReadingOptions = NSJSONReadingAllowFragments;
@@ -241,14 +252,6 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     
     if([segue.identifier isEqualToString:@"showBookingInfo"]){
         
-        //Guardamos lo introducido en el primer text box dentro de la variable insertedName
-        insertedName = _name.text;
-        
-        //Guardamos lo introducido en el segundo text box dentro de la variable insertedPhone
-        insertedPhone = _phone.text;
-        
-        //Guardamos lo introducido en el tercer text box dentro de la variable insertedcomments
-        insertedComments = _comments.text;
         
         //Creamos el objeto de la clase que controla la vista de destino
         NotificationConfirmationViewController *destViewController = segue.destinationViewController;
@@ -262,10 +265,8 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
         destViewController.strComents = [NSString stringWithString:insertedComments];
         destViewController.strTitle = [NSString stringWithString:completeHour];
         destViewController.strDate = _selectedHour;
-        
-        //Ejecutamos el metodo que guarda la informacion completa en la base de datos
-        [self bookingCompleteInfo];
-        
+        destViewController.strLocalizador = localizador;
+       
         
     }
 }
@@ -273,18 +274,25 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 //Metodo que guarda toda la informacion de la reserva en la base de datos.
 -(void)bookingCompleteInfo{
     
-    NSString *webserviceUrl = [[NSString stringWithFormat:@"%@?method=setConfirmacionReserva&code=%@&nombre=%@&telefono=%@&comentarios=%@", BaseURLString, _selectedHour, [NSString stringWithString:insertedName], [NSString stringWithString:insertedPhone], [NSString stringWithString:insertedComments]] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *webserviceUrl = [[NSString stringWithFormat:@"%@?method=setConfirmacionReserva&code=%@&nombre=%@&telefono=%@&comentarios=%@", BaseURLString, _selectedHour, [NSString stringWithString:insertedName], [NSString stringWithString:insertedPhone], [NSString stringWithString:insertedComments]]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     NSURL *url = [NSURL URLWithString:webserviceUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation =
     [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                                                     success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-                                                        NSLog(@"La reserva a sido confirmada correctamente");
-                                                        NSLog(@"%@", [JSON class]);
+                                                        NSArray *jsonGuardado = [self arrayFromJson:JSON];
+                                                        localizadorMA = [NSMutableArray arrayWithArray:[jsonGuardado valueForKey:@"LOCALIZADOR"]];
+                                                        localizador = localizadorMA[0];
+                                                        NSLog(@"%@ del tipo %@", localizador, [localizador class]);
+                                                        
+                                                        //Indicamos el identificador de segue que queremos lanzar y desde donde lo lanzamos
+                                                        [self performSegueWithIdentifier:@"showBookingInfo" sender:self];
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                       
+                                                        NSLog(@"Algo a fallado en bookingCompleteInfo");
+                                                        NSLog(@"%@", error);
                                                     }];
     
     operation.JSONReadingOptions = NSJSONReadingAllowFragments;
@@ -305,4 +313,15 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     
     [av show];
 }
+
+//Metodo obtenido gracias al JSONKit
+-(NSArray *)arrayFromJson:(NSString *) JSONString {
+    
+    //Descodificamos el JSON para poder guardarlo en un Array
+    JSONDecoder * decoder = [[JSONDecoder alloc] initWithParseOptions:JKParseOptionNone];
+    
+    return [decoder mutableObjectWithData:[JSONString JSONData]];
+    
+}
+
 @end

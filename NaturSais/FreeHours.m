@@ -42,7 +42,10 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                      [NSString stringWithFormat:@"%@17",_code],
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
-    self.navigationItem.title = @"Escoge una hora";
+    NSString *day = [_code substringToIndex:2];
+    NSString *month = [_code substringWithRange:NSMakeRange(2, 2)];
+    NSString *year = [_code substringWithRange:NSMakeRange(4, 2)];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@-%@-20%@",day ,month ,year];
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Cargando";
@@ -91,7 +94,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
             NSArray *jsonGuardado = [self arrayFromJson:JSON];
             
             //Comprobamos que el contenido del JSON no sea mayor a 7 ya que si es mayor que 7 quiere decir que todas las horas para ese dia estan ocupadas
-            if (jsonGuardado.count > 7) {
+            if (jsonGuardado.count > 5) {
             
                 //Si estan cupadas mostramos un AlertView que llamaremos desde el metodo error de esta misma clase
                 [self error:@"No hay horas disponibles" message:@"El dia seleccionado esta completo"];

@@ -318,12 +318,20 @@
                                     <action selector="saveInCalendar:" destination="4ec-je-lD0" eventType="touchUpInside" id="AHt-oF-ybG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKE-Qo-A52">
+                                <rect key="frame" x="20" y="333" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ybj-NW-Di7"/>
                     <connections>
                         <outlet property="lblComents" destination="xqJ-qU-dKv" id="fcH-Z7-hJv"/>
+                        <outlet property="lblLocalizador" destination="TKE-Qo-A52" id="5R4-AQ-RjK"/>
                         <outlet property="lblName" destination="9vt-vk-hy4" id="QhU-LG-JiE"/>
                         <outlet property="lblPhone" destination="BfC-FG-eH4" id="iUs-MP-Y6S"/>
                         <outlet property="lblTitle" destination="E8W-xh-k3v" id="jlg-JQ-fqC"/>

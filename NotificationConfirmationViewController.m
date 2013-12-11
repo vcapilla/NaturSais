@@ -38,6 +38,9 @@
     _lblPhone.text = [NSString stringWithString:_strPhone];
     _lblComents.text = [NSString stringWithString:_strComents];
     _lblTitle.text = [NSString stringWithString:_strTitle];
+    _lblLocalizador.text = [NSString stringWithFormat:@"Localizador: %@", [NSString stringWithString:_strLocalizador]];
+    
+    
     self.navigationItem.title = @"Confirmacion de su reserva";
     //No queremos que puedan volver hacia atras porque ya se ha confirmado
     self.navigationItem.hidesBackButton = YES;
@@ -70,9 +73,11 @@
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         if (!granted) { return; }
         EKEvent *event = [EKEvent eventWithEventStore:store];
-        event.title = [NSString stringWithFormat:@"Cita en NaturSais %@", _strTitle];
+        event.title = [NSString stringWithFormat:@"Cita en NaturSais %@ %@", _strTitle, [NSString stringWithString:_strLocalizador]];
         event.startDate = onlyDate; //today
         event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+        event.notes = [NSString stringWithFormat:@"El localizador de su reserva es: %@", [NSString stringWithString:_strLocalizador]];
+        event.location = @"Carrer del Pont, 1 Baixos 43205 Reus (Tarragona)";
         [event setCalendar:[store defaultCalendarForNewEvents]];
         NSError *err = nil;
         [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];

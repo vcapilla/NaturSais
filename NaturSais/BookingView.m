@@ -124,8 +124,8 @@ NSDate *today;
 }
 
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
-    
     _selectedDate = date;
+    
 //    NSString *fechaSeleccionada = [self.dateFormatter stringFromDate:date];
 //    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Fecha seleccionada" message:[NSString stringWithFormat:@"La fecha seleccionada es:%@", fechaSeleccionada] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 //    [av show];
@@ -138,8 +138,14 @@ NSDate *today;
     //Identificamos el segue por si hemos puesto 2
     if([segue.identifier isEqualToString:@"sendDate"]){
         
+        NSDate *selectedDate;
+        
+        if(_selectedDate == nil){
+            selectedDate = today;
+        }else{
         //Seleccionamos la fecha que hay en ese momento en el calendario
-        NSDate *selectedDate = _selectedDate;
+        selectedDate = _selectedDate;
+        }
         
         //creamos un objeto de formato para darle formato a la fecha
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];

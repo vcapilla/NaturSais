@@ -32,7 +32,10 @@
 	// Do any additional setup after loading the view.
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     _versonLabel.text = [NSString stringWithFormat:@"Version: %@",version];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(200/255.0)]];    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(200/255.0)]];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,19 +65,38 @@
 
 -(IBAction)phoneNumberClick:(id)sender{
     
-    //Telefono al que llamara al pulsar encima del link
-    NSString *phoneNumber = @"tel://625917441";
-    //Condicion para controlar si existe una app para poder realizar llamadas
-    if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: phoneNumber]]) {
-        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Complemento no disponible" message:@"No dispone de ninguna aplicacion para poder realizar una llamada." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [av show];
-        
-    }else{
-        
-        //Realizamos la llamada
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
-    }
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Llamando" message:@"Desea realizar la llama?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Si", nil];
+    [alert show];
+
 }
+    
+    - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+    {
+        if (buttonIndex == 0)
+        {
+            NSLog(@"No llamar");
+        }
+        if (buttonIndex == 1)
+        {
+            NSLog(@"Si llamar");
+            //Telefono al que llamara al pulsar encima del link
+            NSString *phoneNumber = @"tel://625917441";
+            //Condicion para controlar si existe una app para poder realizar llamadas
+            if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: phoneNumber]]) {
+                UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Complemento no disponible" message:@"No dispone de ninguna aplicacion para poder realizar una llamada." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [av show];
+                
+            }else{
+                
+                //Realizamos la llamada
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+            }
+
+        }
+    }
+    
+    
+
 
 
 //Metodo que abrira un mensaje de correo nuevo con la direccion que queramos.

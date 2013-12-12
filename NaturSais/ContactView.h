@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactView : UIViewController
+@interface ContactView : UIViewController <UIAlertViewDelegate>
 
-//@property (nonatomic, strong)IBOutlet UIButton *webButon;
-//@property (nonatomic, strong)IBOutlet UIButton *mailButton;
-//@property (nonatomic, strong)IBOutlet UIButton *phoneButton;
-//@property (nonatomic, strong)IBOutlet UIButton *mapButton;
+@property (nonatomic, strong)IBOutlet UIButton *webButon;
+@property (nonatomic, strong)IBOutlet UIButton *mailButton;
+@property (nonatomic, strong)IBOutlet UIButton *phoneButton;
+@property (nonatomic, strong)IBOutlet UIButton *mapButton;
 @property (nonatomic, strong)IBOutlet UILabel *versonLabel;
 
 

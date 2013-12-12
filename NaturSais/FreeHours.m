@@ -42,14 +42,13 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                      [NSString stringWithFormat:@"%@17",_code],
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
-    NSString *day = [_code substringToIndex:2];
-    NSString *month = [_code substringWithRange:NSMakeRange(2, 2)];
-    NSString *year = [_code substringWithRange:NSMakeRange(4, 2)];
-    self.navigationItem.title = [NSString stringWithFormat:@"%@-%@-20%@",day ,month ,year];
+    self.navigationItem.title = @"Disponibilidad";
+    
+    
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Cargando";
-    [hud show:YES];
+    
     
     [super viewDidLoad];
     
@@ -65,7 +64,6 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 //Metodo que, usando la variable code nos devuelve las horas ocupadas para ese dia obteniendolas de un webservice
 -(void)loadData{
     
-  
     
     //Guardamos la URL del webservice con los parametros necesarios en un string
     NSString *webserviceUrl = [NSString stringWithFormat:@"%@?method=getBooking&code=%@", BaseURLString, _code];
@@ -80,8 +78,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
      
         //Si no hay ningun error y obtenemos el paquete JSON lo analizamos dentrod e success
         success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            
-        //Si el paquete viene vacio , quiere decir que todas las horas estan disponibles porque no hay ninguna ocpupada
+                    //Si el paquete viene vacio , quiere decir que todas las horas estan disponibles porque no hay ninguna ocpupada
         if ([JSON isEqual:[NSNull null]]) {
             
            //copiamos el contenido del array freeHoursList a codesToUse que seran los codes que usaremos para mostrar las horas disponibles
@@ -215,11 +212,19 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 //Metodo que se lanza cuando va a aparecer esta vista
 -(void)viewWillAppear:(BOOL)animated{
     
-    //le decimos que ejecute el metodo loadData cada vez que se abre esta vista
+    if ([self.navigationController.viewControllers indexOfObject:self]!=NSNotFound) {
+      
+        [hud show:YES];
+        
+    }
+    
     [self loadData];
     
+    [super viewWillAppear:animated];
+    //Si desaparece de la pila, ejecutamos el metodo deleteBooking
     
 }
+
 
 //Metodo en el que configuramos un AlertView para las alertas de esta clase
 -(void)error:(NSString *)title message:(NSString* )message{

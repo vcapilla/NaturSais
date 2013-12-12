@@ -11,6 +11,7 @@
 #import "FreeHours.h"
 #import "NotificationConfirmationViewController.h"
 #import "JSONKit.h"
+#import "MBProgressHUD.h"
 
 //URL sin envio de mail
 //static NSString *const BaseURLString = @"http://natursais.tk/testservice.php";
@@ -32,6 +33,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     NSString *insertedComments;
     NSString *localizador;
     NSMutableArray *localizadorMA;
+    MBProgressHUD *hud;
 
 }
 
@@ -51,6 +53,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
    
     //Indicamos que titulo tendra la barra de navegacion
     self.navigationItem.title = @"Fecha solicitada";
+    
     
     //Asignamos el texto a la label
     //_titleLabel.text = [NSString stringWithFormat:@"%@", _selectedHour];
@@ -158,8 +161,20 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     [super viewWillDisappear:animated];
 }
 
+
 //Metodo que se ejecutara al pulsar al boton de confirmacion
 -(IBAction)checkTextFields{
+    
+    [_name resignFirstResponder];
+    [_phone resignFirstResponder];
+    [_comments resignFirstResponder];
+    
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Guardando";
+    [hud show:YES];
+    
+    
     
     //Comprobamos que se ha introducido algo en el campo Nombre
     if (_name.text.length == 0) {
@@ -289,6 +304,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                                                         
                                                         //Indicamos el identificador de segue que queremos lanzar y desde donde lo lanzamos
                                                         [self performSegueWithIdentifier:@"showBookingInfo" sender:self];
+                                                        [hud hide:YES];
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                                         NSLog(@"Algo a fallado en bookingCompleteInfo");

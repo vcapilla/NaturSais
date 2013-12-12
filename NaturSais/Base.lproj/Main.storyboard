@@ -446,7 +446,11 @@ QwFcIGRlbCBQb250LCAxIEJhaXhvcyAgICAgICAgICAgICAgIDQzMjA1IFJldXMgKFRhcnJhZ29uYSk
                     </view>
                     <tabBarItem key="tabBarItem" title="Contactar" image="Contactar.png" id="sAG-9d-hBD"/>
                     <connections>
+                        <outlet property="mailButton" destination="kSW-bW-ATq" id="QW9-lc-DLd"/>
+                        <outlet property="mapButton" destination="ovg-rX-Pa3" id="p5N-30-bhr"/>
+                        <outlet property="phoneButton" destination="sYz-tg-0cW" id="HWW-Up-kuo"/>
                         <outlet property="versonLabel" destination="b3q-gt-kZX" id="F3V-Is-Qbb"/>
+                        <outlet property="webButon" destination="kXC-m0-fau" id="IbT-Tb-aIA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9X-nP-TFg" userLabel="First Responder" sceneMemberID="firstResponder"/>

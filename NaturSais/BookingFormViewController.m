@@ -169,41 +169,47 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     [_phone resignFirstResponder];
     [_comments resignFirstResponder];
     
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"Guardando";
-    [hud show:YES];
-    
-    
     
     //Comprobamos que se ha introducido algo en el campo Nombre
-    if (_name.text.length == 0) {
+    if ([_name.text isEqualToString:@""]) {
         
+        NSLog(@"El nombre esta vacio");
         //Si no se ha introducido nada, mostramos un error por pantalla
         [self error:@"Informacion incompleta" message:@"Introduzca un Nombre"];
         
         
-    //Si se ha escrito algo en el campo Nombre, comprobamos que se haya escrito algo en el campo Telefono
-    }else if(_phone.text.length == 0){
         
+    //Si se ha escrito algo en el campo Nombre, comprobamos que se haya escrito algo en el campo Telefono
+    }else if([_phone.text isEqualToString:@""]){
+        
+        NSLog(@"El telefono esta vacio");
         //Si no se ha introducido nada, mostramos un error por pantalla
         [self error:@"Informacion incompleta" message:@"Introduzca un Numero de Telefono"];
                
     //Si se ha comrpobado todo y todo esta OK, lanzamos la transicion entre las 2 vistas.
     }else{
+        
+        NSLog(@"Los 2 campos de nombre y telefono estan llenos");
     
         //Guardamos lo introducido en el primer text box dentro de la variable insertedName
         insertedName = _name.text;
         
         //Guardamos lo introducido en el segundo text box dentro de la variable insertedPhone
         insertedPhone = _phone.text;
-    if(_comments.text.length == 0){
         
+    if([_comments.text isEqualToString:@""]){
         
+        NSLog(@"El campo coments esta vacio");
         insertedComments = @"NO COMMENTS";
+        
     }else{        //Guardamos lo introducido en el tercer text box dentro de la variable insertedcomments
     insertedComments = _comments.text;
     }
+        NSLog(@"Mostramos la ventana de Guardando");
+        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.labelText = @"Guardando";
+        [hud show:YES];
         //Ejecutamos el metodo que guarda la informacion completa en la base de datos
         [self bookingCompleteInfo];        
         

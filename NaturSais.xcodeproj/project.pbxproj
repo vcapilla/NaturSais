@@ -39,6 +39,10 @@
 		8F98D20018111C210008CD89 /* BookingFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F98D1FA18111C210008CD89 /* BookingFormViewController.m */; };
 		8F98D20118111C210008CD89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F98D1FC18111C210008CD89 /* InfoPlist.strings */; };
 		8F98D20218111C210008CD89 /* FreeHours.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F98D1FF18111C210008CD89 /* FreeHours.m */; };
+		8FB6DF5B185B1F360089C96A /* Llamar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6DF58185B1F350089C96A /* Llamar.png */; };
+		8FB6DF5C185B1F360089C96A /* Mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6DF59185B1F360089C96A /* Mail.png */; };
+		8FB6DF5D185B1F360089C96A /* Maps.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6DF5A185B1F360089C96A /* Maps.png */; };
+		8FB6DF5F185B1FA20089C96A /* Web.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6DF5E185B1FA20089C96A /* Web.png */; };
 		8FDFA45317ED10E6002585D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDFA45217ED10E6002585D2 /* Foundation.framework */; };
 		8FDFA45517ED10E6002585D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDFA45417ED10E6002585D2 /* CoreGraphics.framework */; };
 		8FDFA45717ED10E6002585D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDFA45617ED10E6002585D2 /* UIKit.framework */; };
@@ -80,8 +84,8 @@
 		8F0D39241804AAE9007F8701 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8F0D39261804AAF3007F8701 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8F0D39281804AAFD007F8701 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8F117174181881E6007286D9 /* NotificationConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationConfirmationViewController.h; sourceTree = "<group>"; };
-		8F117175181881E6007286D9 /* NotificationConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationConfirmationViewController.m; sourceTree = "<group>"; };
+		8F117174181881E6007286D9 /* NotificationConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationConfirmationViewController.h; path = ../NotificationConfirmationViewController.h; sourceTree = "<group>"; };
+		8F117175181881E6007286D9 /* NotificationConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationConfirmationViewController.m; path = ../NotificationConfirmationViewController.m; sourceTree = "<group>"; };
 		8F2D92BB18339CD400B3413A /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		8F390439180858F50091B7EE /* background_trasp_iphone4snon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_trasp_iphone4snon-retina.png"; sourceTree = "<group>"; };
 		8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_trasp_iphone4sretina.png; sourceTree = "<group>"; };
@@ -122,6 +126,10 @@
 		8F98D1FA18111C210008CD89 /* BookingFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingFormViewController.m; sourceTree = "<group>"; };
 		8F98D1FE18111C210008CD89 /* FreeHours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeHours.h; sourceTree = "<group>"; };
 		8F98D1FF18111C210008CD89 /* FreeHours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeHours.m; sourceTree = "<group>"; };
+		8FB6DF58185B1F350089C96A /* Llamar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Llamar.png; sourceTree = "<group>"; };
+		8FB6DF59185B1F360089C96A /* Mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail.png; sourceTree = "<group>"; };
+		8FB6DF5A185B1F360089C96A /* Maps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maps.png; sourceTree = "<group>"; };
+		8FB6DF5E185B1FA20089C96A /* Web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Web.png; sourceTree = "<group>"; };
 		8FDFA44F17ED10E6002585D2 /* NaturSais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaturSais.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDFA45217ED10E6002585D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8FDFA45417ED10E6002585D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -221,6 +229,10 @@
 		8FDFA44617ED10E6002585D2 = {
 			isa = PBXGroup;
 			children = (
+				8FB6DF5E185B1FA20089C96A /* Web.png */,
+				8FB6DF58185B1F350089C96A /* Llamar.png */,
+				8FB6DF59185B1F360089C96A /* Mail.png */,
+				8FB6DF5A185B1F360089C96A /* Maps.png */,
 				8FE2C72018571DE400B6280B /* Contactar.png */,
 				8FE2C72118571DE400B6280B /* Nosotros.png */,
 				8FE2C72218571DE400B6280B /* Reservar.png */,
@@ -231,8 +243,6 @@
 				8FF7CEEA183288CD00BDF644 /* Icon-Small@2x.png */,
 				8FF7CEE9183288A900BDF644 /* Icon-Spotlight-40@2x.png */,
 				8FF7CEE81832888500BDF644 /* Icon-60@2x.png */,
-				8F117174181881E6007286D9 /* NotificationConfirmationViewController.h */,
-				8F117175181881E6007286D9 /* NotificationConfirmationViewController.m */,
 				8F98D1F718111BC70008CD89 /* Default-568h@2x.png */,
 				8F39043E18085A170091B7EE /* background_trasp_iphone4sretina.png */,
 				8F39043F18085A170091B7EE /* background_trasp_iphone5.png */,
@@ -276,6 +286,8 @@
 		8FDFA45817ED10E6002585D2 /* NaturSais */ = {
 			isa = PBXGroup;
 			children = (
+				8F117174181881E6007286D9 /* NotificationConfirmationViewController.h */,
+				8F117175181881E6007286D9 /* NotificationConfirmationViewController.m */,
 				8F515272183692570060C64E /* MBProgressHUD.h */,
 				8F515273183692570060C64E /* MBProgressHUD.m */,
 				8F98D1F918111C210008CD89 /* BookingFormViewController.h */,
@@ -421,13 +433,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB6DF5F185B1FA20089C96A /* Web.png in Resources */,
 				8FFDD9C1184E466A00755D07 /* left_arrow.png in Resources */,
 				8FDFA46B17ED10E6002585D2 /* Images.xcassets in Resources */,
 				8F98D20118111C210008CD89 /* InfoPlist.strings in Resources */,
 				8FE2C72318571DE400B6280B /* Contactar.png in Resources */,
+				8FB6DF5B185B1F360089C96A /* Llamar.png in Resources */,
 				8F2D92BC18339CD400B3413A /* Images-2.xcassets in Resources */,
 				8FE2C72518571DE400B6280B /* Reservar.png in Resources */,
 				8FDFA45D17ED10E6002585D2 /* InfoPlist.strings in Resources */,
+				8FB6DF5C185B1F360089C96A /* Mail.png in Resources */,
 				8F39043B180858F50091B7EE /* background_trasp_iphone4snon-retina.png in Resources */,
 				8F87CB691805BF9400731574 /* iphone5.png in Resources */,
 				8F39044218085A170091B7EE /* background_trasp_iphone4sretina.png in Resources */,
@@ -435,6 +450,7 @@
 				8FFDD9C4184E466A00755D07 /* right_arrow@2x.png in Resources */,
 				8FFDD9C3184E466A00755D07 /* right_arrow.png in Resources */,
 				8F73BC851836493D0065C908 /* logotipo_normal.png in Resources */,
+				8FB6DF5D185B1F360089C96A /* Maps.png in Resources */,
 				8F98D1F818111BC70008CD89 /* Default-568h@2x.png in Resources */,
 				8F87CB6A1805BF9400731574 /* iphone4sretina.png in Resources */,
 				8F39044318085A170091B7EE /* background_trasp_iphone5.png in Resources */,

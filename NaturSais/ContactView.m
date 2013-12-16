@@ -80,7 +80,7 @@
         {
             NSLog(@"Si llamar");
             //Telefono al que llamara al pulsar encima del link
-            NSString *phoneNumber = @"tel://625917441";
+            NSString *phoneNumber = @"tel://608140283";
             //Condicion para controlar si existe una app para poder realizar llamadas
             if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: phoneNumber]]) {
                 UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Complemento no disponible" message:@"No dispone de ninguna aplicacion para poder realizar una llamada." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -103,7 +103,7 @@
 -(IBAction)mailClick:(id)sender{
     
     //Direccion de correo del cliente
-    NSString *mail = @"mailto://parcapp@parcapp.es";
+    NSString *mail = @"mailto://natursaistienda@gmail.com";
     
     //Condicion que controla que hay una app de mail en el telefono
     if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: mail]]) {

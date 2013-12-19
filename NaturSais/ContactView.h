@@ -14,7 +14,7 @@
 @property (nonatomic, strong)IBOutlet UIButton *mailButton;
 @property (nonatomic, strong)IBOutlet UIButton *phoneButton;
 @property (nonatomic, strong)IBOutlet UIButton *mapButton;
-@property (nonatomic, strong)IBOutlet UILabel *versonLabel;
+
 
 
 -(IBAction)linkButtonClick:(id)sender;

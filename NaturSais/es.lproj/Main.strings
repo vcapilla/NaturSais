@@ -1,6 +1,6 @@
 
 /* Class = "IBUIButton"; normalTitle = "OK"; ObjectID = "3jZ-ju-cAt"; */
-"3jZ-ju-cAt.normalTitle" = "OK";
+"3jZ-ju-cAt.normalTitle" = "Finalizar";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "9vt-vk-hy4"; */
 "9vt-vk-hy4.text" = "Label";
@@ -9,7 +9,7 @@
 "BfC-FG-eH4.text" = "Label";
 
 /* Class = "IBUIButton"; normalTitle = "Reservar"; ObjectID = "Cg6-9f-24Q"; */
-"Cg6-9f-24Q.normalTitle" = "Reservar";
+"Cg6-9f-24Q.normalTitle" = "Seleccionar dia para la reserva";
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "E8W-xh-k3v"; */
 "E8W-xh-k3v.text" = "Label";

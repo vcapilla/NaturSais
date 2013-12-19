@@ -42,7 +42,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                      [NSString stringWithFormat:@"%@17",_code],
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
-    self.navigationItem.title = @"Disponibilidad";
+    self.navigationItem.title = @"Disponible";
     
     
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

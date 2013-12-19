@@ -10,6 +10,6 @@
 
 @interface BookingView : UIViewController
 
-//@property (weak, nonatomic) IBOutlet UIDatePicker *date;
+@property (strong, nonatomic) IBOutlet UIButton *info;
 
 @end

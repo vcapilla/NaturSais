@@ -29,18 +29,6 @@
 /* Class = "IBUITextField"; placeholder = "Telefono"; ObjectID = "VOW-X6-FcY"; */
 "VOW-X6-FcY.placeholder" = "Telefono";
 
-/* Class = "IBUILabel"; text = "Contactar"; ObjectID = "dQC-p5-jBM"; */
-"dQC-p5-jBM.text" = "Contactar";
-
-/* Class = "IBUITextView"; text = "En sus compras on-line recibira su pedido en 48h gracias a nuestros envios urgentes."; ObjectID = "doN-G1-YPC"; */
-"doN-G1-YPC.text" = "En sus compras on-line recibira su pedido en 48h gracias a nuestros envios urgentes.";
-
-/* Class = "IBUITextView"; text = "Natursais somo un establecimiento con tienda on-line donde a parte de servicios de quiromasaje tenemos a su disposicion un catalogo extenso de productos de hervolario y dietetica.                                            "; ObjectID = "fVg-Yo-igV"; */
-"fVg-Yo-igV.text" = "Natursais somo un establecimiento con tienda on-line donde a parte de servicios de quiromasaje tenemos a su disposicion un catalogo extenso de productos de hervolario y dietetica.                                            ";
-
-/* Class = "IBUITabBarItem"; title = "Información"; ObjectID = "fWM-KF-kqB"; */
-"fWM-KF-kqB.title" = "Nosotros";
-
 /* Class = "IBUITextField"; placeholder = "Comentarios"; ObjectID = "gRO-QY-KWf"; */
 "gRO-QY-KWf.placeholder" = "Comentarios";
 

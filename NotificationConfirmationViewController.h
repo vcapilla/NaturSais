@@ -23,6 +23,6 @@
 @property (nonatomic, strong)NSString *strLocalizador;
 
 -(IBAction)endProcess:(id)sender;
--(IBAction)saveInCalendar:(id)sender;
+
 
 @end

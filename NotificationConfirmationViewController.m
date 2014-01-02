@@ -64,10 +64,14 @@
 
 //Al clicar en el boton de OK volvera a la primera vista
 -(IBAction)endProcess:(id)sender{
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Guardar en Calendario" message:@"Desea guardar este evento en el calendario?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Si", nil];
+    [alert show];
+    
+ 
 }
 
--(IBAction)saveInCalendar:(id)sender{
+-(IBAction)saveInCalendar{
     
     EKEventStore *store = [[EKEventStore alloc] init];
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
@@ -81,8 +85,29 @@
         [event setCalendar:[store defaultCalendarForNewEvents]];
         NSError *err = nil;
         [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
-        
+        NSLog(@"Se han guardado los datos en el calendario");
         //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
     }];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSLog(@"No guardar evento en el calendario");
+    }
+    if (buttonIndex == 1)
+    {
+        NSLog(@"Guardar el evento");
+        
+        [self saveInCalendar];
+        
+    }
+    NSLog(@"Volvemos al principio");
+    
+       [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
+
 @end

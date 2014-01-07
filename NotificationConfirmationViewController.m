@@ -71,23 +71,60 @@
  
 }
 
--(IBAction)saveInCalendar{
+
+-(void)saveInCalendar{
     
     EKEventStore *store = [[EKEventStore alloc] init];
-    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-        if (!granted) { return; }
-        EKEvent *event = [EKEvent eventWithEventStore:store];
-        event.title = [NSString stringWithFormat:@"Cita en NaturSais %@ %@", _strTitle, [NSString stringWithString:_strLocalizador]];
-        event.startDate = onlyDate; //today
-        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
-        event.notes = [NSString stringWithFormat:@"El localizador de su reserva es: %@", [NSString stringWithString:_strLocalizador]];
-        event.location = @"Carrer del Pont, 1 Baixos 43205 Reus (Tarragona)";
-        [event setCalendar:[store defaultCalendarForNewEvents]];
-        NSError *err = nil;
-        [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
-        NSLog(@"Se han guardado los datos en el calendario");
-        //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
-    }];
+    
+    switch ([EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent]) {
+        case EKAuthorizationStatusAuthorized:{
+            EKEvent *event = [EKEvent eventWithEventStore:store];
+            event.title = [NSString stringWithFormat:@"Cita en NaturSais %@ %@", _strTitle, [NSString stringWithString:_strLocalizador]];
+            event.startDate = onlyDate; //today
+            event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+            event.notes = [NSString stringWithFormat:@"El localizador de su reserva es: %@", [NSString stringWithString:_strLocalizador]];
+            event.location = @"Carrer del Pont, 1 Baixos 43205 Reus (Tarragona)";
+            [event setCalendar:[store defaultCalendarForNewEvents]];
+            NSError *err = nil;
+            [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+            NSLog(@"Se han guardado los datos en el calendario");
+            //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
+            break;
+        }
+        
+        case EKAuthorizationStatusDenied:{
+            [self displayAccessDenied];
+            break;
+        }
+        
+        case EKAuthorizationStatusNotDetermined:{
+            [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                if(granted){
+                    EKEvent *event = [EKEvent eventWithEventStore:store];
+                    event.title = [NSString stringWithFormat:@"Cita en NaturSais %@ %@", _strTitle, [NSString stringWithString:_strLocalizador]];
+                    event.startDate = onlyDate; //today
+                    event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+                    event.notes = [NSString stringWithFormat:@"El localizador de su reserva es: %@", [NSString stringWithString:_strLocalizador]];
+                    event.location = @"Carrer del Pont, 1 Baixos 43205 Reus (Tarragona)";
+                    [event setCalendar:[store defaultCalendarForNewEvents]];
+                    NSError *err = nil;
+                    [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+                    NSLog(@"Se han guardado los datos en el calendario");
+                    //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
+                } else {
+                    [self displayAccessDenied];
+                }
+            }];
+            break;
+        }
+        case EKAuthorizationStatusRestricted:{
+            [self displayAccessRestricted];
+            break;
+        }
+        
+    }
+    
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -109,5 +146,17 @@
     
 }
 
-
-@end
+- (void) displayMessage:(NSString *)paramMessage title:(NSString *)title{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:paramMessage
+                                                       delegate:nil
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+    [alertView show];
+}
+- (void) displayAccessDenied{
+    [self displayMessage:@"El acceso al calendario a sido denegado, compruebe su configuracion de privacidad" title:@"Acceso denegado"];
+}
+- (void) displayAccessRestricted{
+    [self displayMessage:@"El acceso al calendaro esta restrigido, compruebe sus ajustes" title:@"Acceso restringido"];
+}@end

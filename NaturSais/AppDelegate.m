@@ -12,6 +12,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"fondo.png"]];
+   
+    
     // Override point for customization after application launch.
     return YES;
 }

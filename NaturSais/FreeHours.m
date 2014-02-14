@@ -42,9 +42,22 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                      [NSString stringWithFormat:@"%@17",_code],
                      [NSString stringWithFormat:@"%@18",_code],
                      [NSString stringWithFormat:@"%@19",_code],nil];
-    self.navigationItem.title = @"Disponible";
+    
+        
+    UIImage *backgroundImage = [[UIImage alloc] init];
+    
+    if([[UIScreen mainScreen]bounds].size.height == 568)
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo-568h"];
+    }
+    else
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
     
+    _tableView.backgroundColor = [UIColor clearColor];
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Cargando";
@@ -94,7 +107,12 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
             if (jsonGuardado.count > 5) {
             
                 //Si estan cupadas mostramos un AlertView que llamaremos desde el metodo error de esta misma clase
-                [self error:@"No hay horas disponibles" message:@"El dia seleccionado esta completo"];
+                
+                self.tableView.hidden = YES;
+                self.titleMessage.hidden = NO;
+                self.contentMessage.hidden = NO;
+                self.titleMessage.text=@"Dia Completo";
+                self.contentMessage.text= @"Seleccione otro dia para comprobar si esta disponible";
                 
             //Si el contenido del JSON no es mayor de 7, continuamos
             }else{
@@ -123,7 +141,12 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
             [hud hide:YES];
             
             //AlertView que muestra el error
-            [self error:@"Error en la conexión" message:[NSString stringWithFormat:@"Problemas en la comunicación"]];
+            //[self error:@"Error en la conexión" message:[NSString stringWithFormat:@"Problemas en la comunicación"]];
+            self.tableView.hidden = YES;
+            self.titleMessage.hidden = NO;
+            self.contentMessage.hidden = NO;
+            self.titleMessage.text=@"Error de Conexion";
+            self.contentMessage.text= @"Compruebe que dispone de conexion de datos o conecte por Wi-Fi";
             
             //Log que nos ayuda a saber donde esta el problema
             NSLog(@"Algo esta pasando en el metodo loadData");
@@ -167,6 +190,8 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     //Substraemos unicamente los 2 ultimos numeros que son la hora
     NSString *hour = [obtainedCode substringWithRange:NSMakeRange(6, 2)];
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     //Le añadimos los :00
     cell.textLabel.text = [NSString stringWithFormat:@"%@:00", hour];
     
@@ -189,9 +214,6 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
         
         //Creamos el objeto de la vista destino
         BookingFormViewController *destViewController = segue.destinationViewController;
-        
-        //Indicamos que en la vista destino deshabilite la barra de botones inferior
-        destViewController.hidesBottomBarWhenPushed = YES;
         
         //Le asignamos a la variable selectedHour el codigo que hemos usado en esta vista para poder usarlo
         destViewController.selectedHour = [codesToUse objectAtIndex:indexPath.row];
@@ -226,18 +248,6 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 }
 
 
-//Metodo en el que configuramos un AlertView para las alertas de esta clase
--(void)error:(NSString *)title message:(NSString* )message{
-    
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@",title]
-    
-                                                message:[NSString stringWithFormat:@"%@",message]
-                       
-                                                delegate:nil
-                       
-                                                cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
-    [av show];
-}
+
 
 @end

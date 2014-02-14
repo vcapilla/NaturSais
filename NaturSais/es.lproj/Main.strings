@@ -20,9 +20,6 @@
 /* Class = "IBUIBarButtonItem"; title = "Atrás"; ObjectID = "Nfp-aS-m8A"; */
 "Nfp-aS-m8A.title" = "Atrás";
 
-/* Class = "IBUITabBarItem"; title = "Reservar"; ObjectID = "QcY-H4-9aZ"; */
-"QcY-H4-9aZ.title" = "Reservar";
-
 /* Class = "IBUIButton"; normalTitle = "Confirmar"; ObjectID = "RrF-mZ-Bgt"; */
 "RrF-mZ-Bgt.normalTitle" = "Confirmar";
 

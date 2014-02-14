@@ -51,12 +51,20 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 {
     [super viewDidLoad];
    
-    //Indicamos que titulo tendra la barra de navegacion
-    self.navigationItem.title = @"Fecha solicitada";
+    UIImage *backgroundImage = [[UIImage alloc] init];
     
+    if([[UIScreen mainScreen]bounds].size.height == 568)
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo-568h"];
+    }
+    else
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
     //Asignamos el texto a la label
-    //_titleLabel.text = [NSString stringWithFormat:@"%@", _selectedHour];
+    _titleLabel.text = [NSString stringWithFormat:@"%@", _selectedHour];
     
     //Asignamos las 2 primeras posiciones del valor obtenido de la vista anterior a la variable dia
     NSString *day = [_selectedHour substringToIndex:2];

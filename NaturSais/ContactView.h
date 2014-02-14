@@ -8,18 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactView : UIViewController <UIAlertViewDelegate>
+@interface ContactView : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong)IBOutlet UIButton *webButon;
-@property (nonatomic, strong)IBOutlet UIButton *mailButton;
-@property (nonatomic, strong)IBOutlet UIButton *phoneButton;
-@property (nonatomic, strong)IBOutlet UIButton *mapButton;
+@property (nonatomic, strong)IBOutlet UITableView *tableView;
 
 
-
--(IBAction)linkButtonClick:(id)sender;
--(IBAction)phoneNumberClick:(id)sender;
--(IBAction)mailClick:(id)sender;
--(IBAction)mapClick:(id)sender;
--(IBAction)parcappClick:(id)sender;
 @end

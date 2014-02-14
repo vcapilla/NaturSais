@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookingView : UIViewController
+
+@interface BookingView : UIViewController 
 
 @property (strong, nonatomic) IBOutlet UIButton *info;
+@property (strong, nonatomic) IBOutlet UIButton *horario;
 
 @end

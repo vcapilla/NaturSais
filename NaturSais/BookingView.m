@@ -12,24 +12,24 @@
 
 #import "CKCalendarView.h"
 
-
 @interface BookingView () <CKCalendarDelegate>
 
-@property(nonatomic, strong) CKCalendarView *calendar;
-@property(nonatomic, strong) UILabel *dateLabel;
-@property(nonatomic, strong) NSDateFormatter *dateFormatter;
-@property(nonatomic, strong) NSDate *minimumDate;
-@property(nonatomic, strong) NSArray *disabledDates;
 @property(nonatomic, strong) NSDate *selectedDate;
+@property(nonatomic, strong) CKCalendarView *calendar;
 
 @end
+
 //Pantalla de seleccion de fecha
 @implementation BookingView{
-NSDate *today;
+
+    NSDate *today;
+    
 }
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     
     if (self) {
         
@@ -41,42 +41,32 @@ NSDate *today;
 {
     
     [super viewDidLoad];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(200/255.0)]];
-    CKCalendarView *calendar = [[CKCalendarView alloc]initWithStartDay:startMonday frame:CGRectMake(35, 60, 250, 250)];
+
+    CKCalendarView *calendar = [[CKCalendarView alloc]initWithStartDay:startMonday frame:CGRectMake(10, 100, 300, 300)];
     self.calendar = calendar;
     calendar.delegate = self;
-    
-    self.dateFormatter = [[NSDateFormatter alloc] init];
-    [self.dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    today = [NSDate date];
-    NSDate *minDate = [today dateByAddingTimeInterval:-3600*1000];
-    self.minimumDate = minDate;
-    
     calendar.onlyShowCurrentMonth = NO;
     calendar.adaptHeightToNumberOfWeeksInMonth = YES;
+    calendar.backgroundColor = [UIColor clearColor];
+     
+    UIImage *backgroundImage = [[UIImage alloc] init];
     
-    calendar.backgroundColor = [UIColor colorWithRed:(28/255.0) green:(145/255.0) blue:(41/255.0) alpha:(150/255.0)];
-    [self.view addSubview:calendar];
-    
-    
-    self.navigationItem.title = @"Reservar";    
-    
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
+    if([[UIScreen mainScreen]bounds].size.height == 568)
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo-568h"];
     }
+    else
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+
+    
+    [self.view addSubview:calendar];
+
+    _info.backgroundColor = [UIColor clearColor];
+
 }
 
 - (void)localeDidChange {
@@ -84,13 +74,23 @@ NSDate *today;
 }
 
 - (BOOL)dateIsDisabled:(NSDate *)date {
-
-    NSString *hoyString = [self.dateFormatter stringFromDate:today];
-    NSDate *hoyDate = [self.dateFormatter dateFromString:hoyString];
- 
-    if ([date compare:hoyDate]==NSOrderedAscending){
-        if([date compare:hoyDate]==NSOrderedSame){
-            
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"ddMMyy"];
+    
+    NSString *hoyString = [formatter stringFromDate:[NSDate date]];
+    NSDate *hoyDate = [formatter dateFromString:hoyString];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *comp = [cal components:NSWeekdayCalendarUnit fromDate:date];
+    NSInteger dayOfWeek = [comp weekday];
+    
+    BOOL esmayor = [date timeIntervalSinceNow]>0.0;
+    BOOL eshoy = [date isEqual:hoyDate];
+    
+    
+    if (dayOfWeek == 7 || dayOfWeek == 1) {
+        return YES;
+    }else if (esmayor || eshoy){
             return NO;
             
         }else{
@@ -101,51 +101,34 @@ NSDate *today;
         
     }
     
-    return NO;
-    
-}
-
-#pragma mark -
-#pragma mark - CKCalendarDelegate
-
-- (void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date {
-    // TODO: play with the coloring if we want to...
-    
-    if ([self dateIsDisabled:date]) {
-        dateItem.backgroundColor =[UIColor colorWithRed:230 green:230 blue:230 alpha:0];
-        dateItem.textColor =[UIColor grayColor];
+-(void)calendar:(CKCalendarView *)calendar configureDateItem:(CKDateItem *)dateItem forDate:(NSDate *)date{
+    if([self dateIsDisabled:date]){
+        dateItem.backgroundColor = [UIColor clearColor];
+        dateItem.textColor = [UIColor colorWithRed:(119/250.0) green:(119/250.0) blue:(119/250.0) alpha:(250/250.0)];
         
     }
 }
 
-
-- (BOOL)calendar:(CKCalendarView *)calendar willSelectDate:(NSDate *)date {
+-(BOOL)calendar:(CKCalendarView *)calendar willSelectDate:(NSDate *)date{
+    
     return ![self dateIsDisabled:date];
+    
 }
 
-- (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date {
+-(void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date{
     _selectedDate = date;
-    
-//    NSString *fechaSeleccionada = [self.dateFormatter stringFromDate:date];
-//    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Fecha seleccionada" message:[NSString stringWithFormat:@"La fecha seleccionada es:%@", fechaSeleccionada] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    [av show];
-    
+    [self performSegueWithIdentifier:@"sendDate" sender:self];
 }
 
-//Metodo que se lanza al pulsar el boton de Reservar, debajo del calendario de seleccion.
+////Metodo que se lanza al pulsar el boton de Reservar, debajo del calendario de seleccion.
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     //Identificamos el segue por si hemos puesto 2
     if([segue.identifier isEqualToString:@"sendDate"]){
         
-        NSDate *selectedDate;
         
-        if(_selectedDate == nil){
-            selectedDate = today;
-        }else{
-        //Seleccionamos la fecha que hay en ese momento en el calendario
-        selectedDate = _selectedDate;
-        }
+        
+        
         
         //creamos un objeto de formato para darle formato a la fecha
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -155,16 +138,16 @@ NSDate *today;
         FreeHours *destination = segue.destinationViewController;
         
         //Convertimos el formato Date a formato String
-        NSString *formatedCode = [formatter stringFromDate:selectedDate];
+        NSString *formatedCode = [formatter stringFromDate:_selectedDate];
         
         //guardamos el string con la fecha obtenida en el objeto code de la clase de destino
         destination.code = formatedCode;
-        
-        //Indicamos que una vez pasemos a la siguiente pantalla la barra de pestañas no aparezca
-        destination.hidesBottomBarWhenPushed = YES;
-        
+
        
+    }else if([segue.identifier isEqualToString:@"mostrarHorarios"]){
+        
     }
+    
 }
 
 @end

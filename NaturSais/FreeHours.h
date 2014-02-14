@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FreeHours : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface FreeHours : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong)IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSString *code;
-
+@property (nonatomic, strong)IBOutlet UILabel *titleMessage;
+@property (nonatomic, strong)IBOutlet UITextView *contentMessage;
 
 @end

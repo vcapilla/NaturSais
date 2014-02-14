@@ -40,8 +40,19 @@
     _lblTitle.text = [NSString stringWithString:_strTitle];
     _lblLocalizador.text = [NSString stringWithFormat:@"Localizador: %@", [NSString stringWithString:_strLocalizador]];
     
+    UIImage *backgroundImage = [[UIImage alloc] init];
     
-    self.navigationItem.title = @"Confirmacion de su reserva";
+    if([[UIScreen mainScreen]bounds].size.height == 568)
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo-568h"];
+    }
+    else
+    {
+        backgroundImage = [UIImage imageNamed:@"fondo"];
+    }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    
+
     //No queremos que puedan volver hacia atras porque ya se ha confirmado
     self.navigationItem.hidesBackButton = YES;
     NSLog(@"Fecha y hora:%@", _strDate);

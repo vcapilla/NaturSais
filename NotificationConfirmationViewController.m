@@ -76,14 +76,12 @@
 //Al clicar en el boton de OK volvera a la primera vista
 -(IBAction)endProcess:(id)sender{
     
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Guardar en Calendario" message:@"Desea guardar este evento en el calendario?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Si", nil];
-    [alert show];
-    
- 
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 
 
--(void)saveInCalendar{
+-(IBAction)addCalendar:(id)sender{
     
     EKEventStore *store = [[EKEventStore alloc] init];
     
@@ -135,25 +133,6 @@
         
     }
     
-    
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0)
-    {
-        NSLog(@"No guardar evento en el calendario");
-    }
-    if (buttonIndex == 1)
-    {
-        NSLog(@"Guardar el evento");
-        
-        [self saveInCalendar];
-        
-    }
-    NSLog(@"Volvemos al principio");
-    
-       [self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 

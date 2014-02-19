@@ -242,6 +242,9 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                                                         
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                        [hud hide:YES];
+                                                        [self error:@"Error de conexión" message:@"Comprueba que su conexión funcione correctamente"];
+                                                        NSLog(@"Error al reservar la fecha y la hora");
                                                         NSLog(@"%@", error);
                                                     }];
     
@@ -270,7 +273,9 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                                                     }
                                                     }
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-                                                        NSLog(@"Hay algun error");
+                                                        [hud hide:YES];
+                                                        [self error:@"Error de conexión" message:@"Comprueba que su conexión funcione correctamente"];
+                                                        NSLog(@"Error eliminando");
                                                         NSLog(@"%@", error);
                                                     }];
     
@@ -289,7 +294,7 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
         NotificationConfirmationViewController *destViewController = segue.destinationViewController;
         
         //Le indicamos que seguimos sin querer ver los botones de la barra inferior
-        destViewController.hidesBottomBarWhenPushed = YES;
+        //destViewController.hidesBottomBarWhenPushed = YES;
         
         //Enviamos los datos insertados en las text box a las variables indicadas de la siguiente vista
         destViewController.strName = [NSString stringWithString:insertedName];
@@ -326,6 +331,8 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                                                     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                                                         NSLog(@"Algo a fallado en bookingCompleteInfo");
                                                         NSLog(@"%@", error);
+                                                        [hud hide:YES];
+                                                        [self error:@"Error de conexión" message:@"Comprueba que su conexión funcione correctamente"];
                                                     }];
     
     operation.JSONReadingOptions = NSJSONReadingAllowFragments;

@@ -32,6 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIImage *logo = [UIImage imageNamed:@"logo"];
+    self.navigationItem.titleView =[[UIImageView alloc] initWithImage:logo];
+    
     NSDateFormatter *dateFormatter;
     //Rellenamos las etiquetas con la informacion obtenida de la vista anterior
     _lblName.text = [NSString stringWithString:_strName];
@@ -97,6 +101,7 @@
             NSError *err = nil;
             [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
             NSLog(@"Se han guardado los datos en el calendario");
+            [self displayMessage:@"Este evento se a guardado en su calendario" title:@"Confirmado"];
             //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
             break;
         }
@@ -119,6 +124,7 @@
                     NSError *err = nil;
                     [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
                     NSLog(@"Se han guardado los datos en el calendario");
+                    [self displayMessage:@"Este evento se a guardado en su calendario" title:@"Confirmado"];
                     //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
                 } else {
                     [self displayAccessDenied];

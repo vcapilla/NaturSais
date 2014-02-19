@@ -34,6 +34,10 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 
 - (void)viewDidLoad
 {
+    
+    UIImage *logo = [UIImage imageNamed:@"logo"];
+    self.navigationItem.titleView =[[UIImageView alloc] initWithImage:logo];
+    
         //Inicializacion de Array donde guardamos las horas posibles a reservar
     freeHoursList = [NSMutableArray arrayWithObjects:
                      [NSString stringWithFormat:@"%@10",_code],
@@ -192,6 +196,10 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     
     cell.backgroundColor = [UIColor clearColor];
     
+    UIView *bgColorView = [[UIView alloc] init];
+    [bgColorView setBackgroundColor:[UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(50/255.0)]];
+    
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(50/255.0)];
     //Le añadimos los :00
     cell.textLabel.text = [NSString stringWithFormat:@"%@:00", hour];
     

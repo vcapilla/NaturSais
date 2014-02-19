@@ -31,6 +31,9 @@
 {
     
     [super viewDidLoad];
+    
+    UIImage *logo = [UIImage imageNamed:@"logo"];
+    self.navigationItem.titleView =[[UIImageView alloc] initWithImage:logo];
         
     _tableView.backgroundColor = [UIColor clearColor];
     
@@ -82,6 +85,11 @@
     NSString *key = [contactContent allKeys][indexPath.row];
     NSString *detail = [contactContent objectForKey:key];
     cell.backgroundColor = [UIColor clearColor];
+    
+    UIView *bgColorView = [[UIView alloc] init];
+    [bgColorView setBackgroundColor:[UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(50/255.0)]];
+    
+    cell.selectedBackgroundView = bgColorView;
     cell.textLabel.text = [NSString stringWithString:key];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", detail];
     

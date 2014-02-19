@@ -41,7 +41,9 @@
 {
     
     [super viewDidLoad];
-
+    
+    UIImage *logo = [UIImage imageNamed:@"logo"];
+    self.navigationItem.titleView =[[UIImageView alloc] initWithImage:logo];
     CKCalendarView *calendar = [[CKCalendarView alloc]initWithStartDay:startMonday frame:CGRectMake(10, 100, 300, 300)];
     self.calendar = calendar;
     calendar.delegate = self;

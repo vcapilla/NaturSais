@@ -25,6 +25,9 @@
 
 - (void)viewDidLoad
 {
+    UIImage *logo = [UIImage imageNamed:@"logo"];
+    self.navigationItem.titleView =[[UIImageView alloc] initWithImage:logo];
+    
     UIImage *backgroundImage = [[UIImage alloc] init];
     
     if([[UIScreen mainScreen]bounds].size.height == 568)

@@ -115,7 +115,12 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
                 self.tableView.hidden = YES;
                 self.titleMessage.hidden = NO;
                 self.contentMessage.hidden = NO;
+                self.contentMessage.backgroundColor = [UIColor clearColor];
+                self.contentMessage.editable = NO;
+                self.contentMessage.textColor = [UIColor grayColor];
+                self.titleMessage.textColor = [UIColor darkGrayColor];
                 self.titleMessage.text=@"Dia Completo";
+                [self.titleMessage sizeToFit];
                 self.contentMessage.text= @"Seleccione otro dia para comprobar si esta disponible";
                 
             //Si el contenido del JSON no es mayor de 7, continuamos
@@ -149,7 +154,13 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
             self.tableView.hidden = YES;
             self.titleMessage.hidden = NO;
             self.contentMessage.hidden = NO;
+            self.contentMessage.backgroundColor = [UIColor clearColor];
+            self.contentMessage.editable = NO;
+            self.contentMessage.textColor = [UIColor grayColor];
+            self.titleMessage.textColor = [UIColor darkGrayColor];
+            
             self.titleMessage.text=@"Error de Conexion";
+            [self.titleMessage sizeToFit];
             self.contentMessage.text= @"Compruebe que dispone de conexion de datos o conecte por Wi-Fi";
             
             //Log que nos ayuda a saber donde esta el problema
@@ -199,7 +210,8 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     UIView *bgColorView = [[UIView alloc] init];
     [bgColorView setBackgroundColor:[UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(50/255.0)]];
     
-    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(50/255.0)];
+    
+    cell.selectedBackgroundView = bgColorView;
     //Le añadimos los :00
     cell.textLabel.text = [NSString stringWithFormat:@"%@:00", hour];
     

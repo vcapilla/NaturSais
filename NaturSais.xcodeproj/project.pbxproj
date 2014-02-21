@@ -18,6 +18,7 @@
 		8F238B9F189AAB6700EFFBE1 /* fondo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F238B9E189AAB6700EFFBE1 /* fondo@2x.png */; };
 		8F2D92BC18339CD400B3413A /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F2D92BB18339CD400B3413A /* Images-2.xcassets */; };
 		8F515274183692570060C64E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F515273183692570060C64E /* MBProgressHUD.m */; };
+		8F6AC1BF18B77D48001B8D22 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6AC1BE18B77D48001B8D22 /* logo.png */; };
 		8F812B4918056B0A001D6140 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F812B3A18056B0A001D6140 /* AFJSONRequestOperation.m */; };
 		8F87CB7E1806017A00731574 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F87CB6F1806017A00731574 /* AFHTTPClient.m */; };
 		8F87CB7F1806017A00731574 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F87CB711806017A00731574 /* AFHTTPRequestOperation.m */; };
@@ -36,7 +37,6 @@
 		8FDCE788189A5B4A00A82356 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDCE787189A5B4A00A82356 /* calendar.png */; };
 		8FDCE78A189A5B5C00A82356 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDCE789189A5B5C00A82356 /* info.png */; };
 		8FDCE78C189A5B6500A82356 /* reloj.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDCE78B189A5B6500A82356 /* reloj.png */; };
-		8FDCE78E189A5B7200A82356 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDCE78D189A5B7200A82356 /* logo.png */; };
 		8FDCE791189A5FA800A82356 /* Horarios.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCE790189A5FA800A82356 /* Horarios.m */; };
 		8FDFA45317ED10E6002585D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDFA45217ED10E6002585D2 /* Foundation.framework */; };
 		8FDFA45517ED10E6002585D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDFA45417ED10E6002585D2 /* CoreGraphics.framework */; };
@@ -83,6 +83,7 @@
 		8F2D92BB18339CD400B3413A /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		8F515272183692570060C64E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../MBProgressHUD.h; sourceTree = "<group>"; };
 		8F515273183692570060C64E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../MBProgressHUD.m; sourceTree = "<group>"; };
+		8F6AC1BE18B77D48001B8D22 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8F812B3918056B0A001D6140 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
 		8F812B3A18056B0A001D6140 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
 		8F812B4F18056BED001D6140 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		8FDCE787189A5B4A00A82356 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		8FDCE789189A5B5C00A82356 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		8FDCE78B189A5B6500A82356 /* reloj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reloj.png; sourceTree = "<group>"; };
-		8FDCE78D189A5B7200A82356 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8FDCE78F189A5FA800A82356 /* Horarios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Horarios.h; path = ../Horarios.h; sourceTree = "<group>"; };
 		8FDCE790189A5FA800A82356 /* Horarios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Horarios.m; path = ../Horarios.m; sourceTree = "<group>"; };
 		8FDFA44F17ED10E6002585D2 /* NaturSais.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaturSais.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,9 +213,9 @@
 		8FDFA44617ED10E6002585D2 = {
 			isa = PBXGroup;
 			children = (
+				8F6AC1BE18B77D48001B8D22 /* logo.png */,
 				8F238B9E189AAB6700EFFBE1 /* fondo@2x.png */,
 				8F238B9C189AAB4A00EFFBE1 /* fondo-568h@2x.png */,
-				8FDCE78D189A5B7200A82356 /* logo.png */,
 				8FDCE78B189A5B6500A82356 /* reloj.png */,
 				8FDCE789189A5B5C00A82356 /* info.png */,
 				8FDCE787189A5B4A00A82356 /* calendar.png */,
@@ -421,7 +421,7 @@
 				8FDFA45D17ED10E6002585D2 /* InfoPlist.strings in Resources */,
 				8FFDD9C4184E466A00755D07 /* right_arrow@2x.png in Resources */,
 				8FFDD9C3184E466A00755D07 /* right_arrow.png in Resources */,
-				8FDCE78E189A5B7200A82356 /* logo.png in Resources */,
+				8F6AC1BF18B77D48001B8D22 /* logo.png in Resources */,
 				8F98D1F818111BC70008CD89 /* Default-568h@2x.png in Resources */,
 				8FDFA46617ED10E6002585D2 /* Main.storyboard in Resources */,
 				8FFDD9C2184E466A00755D07 /* left_arrow@2x.png in Resources */,

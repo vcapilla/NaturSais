@@ -34,6 +34,9 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     NSString *localizador;
     NSMutableArray *localizadorMA;
     MBProgressHUD *hud;
+    NSArray *characters;
+    NSArray *encoding;
+    NSArray *badCharacters;
 
 }
 
@@ -66,6 +69,14 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     }
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
+    characters = @[ @"!", @"'", @"(", @")", @",", @"-", @".", @"/", @":", @";",@"?", @"@", @"_"];
+    
+    encoding = @[@"€21", @"%27", @"%28", @"%29", @"%2C", @"%2D", @"%2F", @"%3A", @"%3B", @"%3F", @"%40", @"5F"];
+    
+    for (int i = 0; i < characters.count; i++)
+    {
+        NSLog(@"%@",[NSString stringWithFormat:@"%@", characters[i]]);
+    }
     //Asignamos el texto a la label
     _titleLabel.text = [NSString stringWithFormat:@"%@", _selectedHour];
     
@@ -177,7 +188,9 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
 -(IBAction)checkTextFields{
     
     [_name resignFirstResponder];
+    _name.layer.borderColor =[[UIColor clearColor]CGColor];
     [_phone resignFirstResponder];
+    _phone.layer.borderColor = [[UIColor clearColor]CGColor];
     [_comments resignFirstResponder];
     
     
@@ -186,17 +199,28 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
         
         NSLog(@"El nombre esta vacio");
         //Si no se ha introducido nada, mostramos un error por pantalla
-        [self error:@"Informacion incompleta" message:@"Introduzca un Nombre"];
+        //[self error:@"Informacion incompleta" message:@"Introduzca un Nombre"];
+        
+            _name.layer.cornerRadius = 8.0f;
+            _name.layer.masksToBounds = YES;
+            _name.layer.borderColor = [[UIColor redColor] CGColor];
+            _name.layer.borderWidth = 1.0f;
+        
         
         
         
     //Si se ha escrito algo en el campo Nombre, comprobamos que se haya escrito algo en el campo Telefono
-    }else if([_phone.text isEqualToString:@""]){
+    }else if([_phone.text isEqualToString:@""] || _phone.text.length != 9){
         
         NSLog(@"El telefono esta vacio");
         //Si no se ha introducido nada, mostramos un error por pantalla
-        [self error:@"Informacion incompleta" message:@"Introduzca un Numero de Telefono"];
-               
+        //[self error:@"Informacion incompleta" message:@"Introduzca un Numero de Telefono"];
+        
+        _phone.layer.cornerRadius = 8.0f;
+        _phone.layer.masksToBounds = YES;
+        _phone.layer.borderColor = [[UIColor redColor] CGColor];
+        _phone.layer.borderWidth = 1.0f;
+        
     //Si se ha comrpobado todo y todo esta OK, lanzamos la transicion entre las 2 vistas.
     }else{
         
@@ -363,5 +387,21 @@ static NSString *const BaseURLString = @"http://natursais.esy.es/service/diary_s
     return [decoder mutableObjectWithData:[JSONString JSONData]];
     
 }
+
+//NSMutableArray* aList = [[NSMutableArray alloc] initWithObjects:@"for your information",@"for",@"you ",@"at ",nil];
+//NSMutableArray* bList = [[NSMutableArray alloc] initWithObjects:@"fyi",@"4",@"u ",@"@ ",nil];
+//
+//for (int i=0; i<[aList count];i++)
+//{
+//    message = [message stringByReplacingOccurrencesOfString:[aList objectAtIndex:i]
+//                                                 withString:[bList objectAtIndex:i]];
+//}
+//
+//NSLog(@"%@",message);
+
+
+
+
+
 
 @end

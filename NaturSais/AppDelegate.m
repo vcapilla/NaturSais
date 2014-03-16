@@ -13,7 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(50/255.0)]];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor  colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(200/255.0)]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:(62/255.0) green:(154/255.0) blue:(51/255.0) alpha:(200/255.0)]];
         
